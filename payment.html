@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Make a Payment - Catskill Mt. Leather Co.</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <script language="javascript">
+    <!--
+    function gone() {
+        window.location="proc.cfm"
+    }
+
+    function popup() {
+        vidWindow = open("","popup","width=520,height=560,left=176,top=35,scrollbars,location=0,navbar=0,statusbar=0");
+    }
+
+    function subit() {
+        var db = document.buy;
+        if(db.amount.value == "") {
+            alert("Please enter a payment amount.");
+            return false;
+        }
+        if(db.FNAME.value == "") {
+            alert("Please enter your first name.");
+            return false;
+        }
+        if(db.LNAME.value == "") {
+            alert("Please enter your last name.");
+            return false;
+        }
+        if(db.EMAIL.value.indexOf(".") < 0 || db.EMAIL.value.indexOf("@") < 0) {
+            alert("Please enter a valid email address.");
+            return false;
+        }
+        return true;
+    }
+
+    function cham() {
+        var na = document.buy.amount.value;
+        document.buy.amount.value = dollfix(na);
+    }
+
+    function dollfix(n) {
+        n = parseInt(n * 100 + 0.5) / 100;
+        var ns = n + "";
+        var dp = ns.indexOf(".");
+        if(dp < 0)
+            ns += ".00";
+        else if(ns.length - dp == 2)
+            ns += "0";
+        return ns;
+    }
+    //-->
+    </script>
+</head>
+<body>
+    <header>
+        <nav>
+            <h1><a href="index.html" style="text-decoration: none; color: inherit;">Catskill Mt. Leather Co.</a></h1>
+            <button class="menu-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Side Navigation Popout -->
+    <nav class="side-nav" id="sideNav">
+        <div class="side-nav-content">
+            <button class="close-btn" aria-label="Close navigation">&times;</button>
+            <div class="nav-logo">
+                <a href="index.html" class="nav-logo-link">
+                    <img src="images/logo.png" alt="Catskill Mt. Leather Co. Logo" class="nav-logo-img">
+                </a>
+            </div>
+            <ul class="side-nav-menu">
+                <li class="nav-dropdown">
+                    <a href="about.html" class="nav-link dropdown-toggle">About Us <span class="dropdown-arrow">▼</span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="about.html" class="dropdown-link" data-tab="history">Our History</a></li>
+                        <li><a href="about.html" class="dropdown-link" data-tab="mission">Our Mission</a></li>
+                        <li><a href="about.html" class="dropdown-link" data-tab="makers">Meet Your Makers</a></li>
+                        <li><a href="about.html" class="dropdown-link" data-tab="schedule">Show Schedule</a></li>
+                        <li><a href="about.html" class="dropdown-link" data-tab="famous">Famous Footwear</a></li>
+                    </ul>
+                </li>
+                <li class="nav-dropdown">
+                    <a href="custom-design.html" class="nav-link dropdown-toggle">Shop <span class="dropdown-arrow">▼</span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="custom-design.html" class="dropdown-link">Custom Design Options</a></li>
+                        <li><a href="price-quote.html" class="dropdown-link">Price Quote Submission Form</a></li>
+                        <li><a href="care-guide.html" class="dropdown-link">Wear & Care</a></li>
+                    </ul>
+                </li>
+                <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+                <li><a href="order-status.html" class="nav-link">Check My Order Status</a></li>
+                <li><a href="payment.html" class="nav-link">Make a Payment</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Overlay for side navigation -->
+    <div class="nav-overlay" id="navOverlay"></div>
+
+    <main class="payment-page">
+        <section class="page-content">
+            <div class="content-container">
+                <h1>Make Your Payment</h1>
+                
+                <!-- Authorize.Net Seal -->
+                <div class="authorize-net-seal">
+                    <div class="AuthorizeNetSeal"> 
+                        <script type="text/javascript" language="javascript">var ANS_customer_id="a9c970a6-fe3e-481e-adfb-e4d9e73a7bd4";</script> 
+                        <script type="text/javascript" language="javascript" src="//VERIFY.AUTHORIZE.NET/anetseal/seal.js"></script> 
+                    </div> 
+                </div>
+
+                <!-- Payment Form -->
+                <div class="payment-form-container">
+                    <form name="buy" method="POST" onSubmit="return subit()" action="cmpay1.asp" class="payment-form">
+                        <input type="hidden" name="Ord" value="payment on account">
+                        
+                        <div class="form-section">
+                            <h2>Payment Information</h2>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="invoice">Invoice #</label>
+                                    <input type="text" name="DESCRIPTION" id="invoice" value="" placeholder="Enter invoice number">
+                                </div>
+                                <div class="form-group">
+                                    <label for="amount">Payment Amount</label>
+                                    <div class="currency-input">
+                                        <span class="currency-symbol">$</span>
+                                        <input type="text" onblur="javascript:cham();" name="amount" id="amount" value="" placeholder="0.00">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-section">
+                            <h2>Customer Information</h2>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="fname">First Name *</label>
+                                    <input type="text" name="FNAME" id="fname" value="" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="lname">Last Name *</label>
+                                    <input type="text" name="LNAME" id="lname" value="" required>
+                                </div>
+                            </div>
+                            <div class="form-group full-width">
+                                <label for="email">Email Address *</label>
+                                <input type="email" name="EMAIL" id="email" value="" required>
+                            </div>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="submit" class="payment-button">Make a Payment</button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Payment Instructions -->
+                <div class="payment-instructions">
+                    <div class="instruction-card">
+                        <h3>Payment Process</h3>
+                        <p>After clicking the <strong>"Make a Payment"</strong> button, you will be directed to a secure payment page where you can enter your credit card or bank information for eCheck payments.</p>
+                        
+                        <p><strong>Important:</strong> The card used when placing your order <strong>will not be automatically charged</strong> unless you enter the information on the next payment page.</p>
+                        
+                        <h4>Required Information:</h4>
+                        <ul>
+                            <li><strong>Credit Cards:</strong> Card number, billing address, and security code (3 digits for Visa, MasterCard, Discover; 4 digits for American Express)</li>
+                            <li><strong>eChecks:</strong> Bank name, routing number, account number, and billing information</li>
+                        </ul>
+                        
+                        <p>A payment receipt will be generated once your payment has been processed and authorized. <strong>Please print this page for your records.</strong></p>
+                        
+                        <p><strong>Please Note:</strong> There are no refunds on payments or moccasins</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="scripts/main.js"></script>
+</body>
+</html>

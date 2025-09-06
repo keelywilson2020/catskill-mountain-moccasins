@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Price Quote - Catskill Mt. Leather Co.</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <style>
+        .quote-form-modern {
+            background: #f8f6f2;
+            border-radius: 12px;
+            padding: 2em 1.5em;
+            max-width: 700px;
+            margin: 2em auto;
+            box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+        }
+        .quote-form-modern h2,
+        .quote-form-modern h3 {
+            color: #7c5c2b;
+            margin-top: 0;
+        }
+        .quote-form-modern label {
+            font-weight: bold;
+            color: #4e3a1e;
+            display: block;
+            margin-bottom: 0.3em;
+        }
+        .quote-form-modern input,
+        .quote-form-modern select,
+        .quote-form-modern textarea {
+            width: 100%;
+            padding: 0.6em;
+            margin-bottom: 1.2em;
+            border: 1px solid #c7a97b;
+            border-radius: 6px;
+            font-size: 1em;
+            background: #fff;
+        }
+        .quote-form-modern input[type="checkbox"] {
+            width: auto;
+            margin-right: 0.5em;
+        }
+        .quote-form-modern .checkbox-group label {
+            display: inline-block;
+            margin-right: 1.5em;
+            font-weight: normal;
+        }
+        .quote-form-modern textarea {
+            min-height: 80px;
+        }
+        .quote-form-modern .form-section {
+            margin-bottom: 1.2em;
+        }
+        .quote-form-modern button[type="submit"] {
+            background: #c7a97b;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            padding: 0.8em 2em;
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .quote-form-modern button[type="submit"]:hover {
+            background: #a07d4f;
+        }
+        @media (max-width: 600px) {
+            .quote-form-modern {
+                padding: 1em 0.5em;
+            }
+        }
+
+        /* Side Navigation Styles */
+        .side-nav {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 320px;
+            height: 100%;
+            background: #4a2f1a;
+            z-index: 1001;
+            box-shadow: 2px 0 16px rgba(0,0,0,0.12);
+            transition: transform 0.3s;
+        }
+        .side-nav-content {
+            padding: 2em 1.5em;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            position: relative;
+        }
+        .close-btn {
+            font-size: 2em;
+            background: none;
+            border: none;
+            cursor: pointer;
+            position: absolute;
+            top: 16px;
+            right: 24px;
+            color: #fff;
+        }
+        .nav-logo {
+            margin-bottom: 2em;
+            text-align: center;
+        }
+        .nav-logo-link {
+            text-decoration: none;
+            color: inherit;
+        }
+        .nav-logo-img {
+            max-width: 120px;
+        }
+        .side-nav-menu li a,
+        .side-nav-list li a {
+            color: #fff;
+        }
+        .side-nav-menu li a:hover,
+        .side-nav-list li a:hover {
+            color: #c7a97b;
+        }
+        .dropdown-menu {
+            background: #4a2f1a;
+        }
+        .dropdown-link {
+            color: #fff;
+        }
+        .dropdown-link:hover {
+            color: #c7a97b;
+            background: #3a2a13;
+            border-radius: 4px;
+        }
+        @media (max-width: 700px) {
+            .side-nav {
+                width: 80vw;
+                min-width: 220px;
+                max-width: 350px;
+            }
+            .side-nav-content {
+                padding: 1.5em 0.7em;
+            }
+        }
+        /* Overlay styles */
+        .nav-overlay {
+            display: none;
+            position: fixed;
+            top: 0; left: 0;
+            width: 100vw; height: 100vh;
+            background: rgba(30, 20, 10, 0.65); /* semi-transparent dark overlay */
+            z-index: 1000;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <h1><a href="index.html" style="text-decoration: none; color: inherit;">Catskill Mt. Leather Co.</a></h1>
+            <button class="menu-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Side Navigation Popout -->
+    <nav class="side-nav" id="sideNav">
+        <div class="side-nav-content">
+            <button class="close-btn" aria-label="Close navigation">&times;</button>
+            <div class="nav-logo">
+                <a href="index.html" class="nav-logo-link">
+                    <img src="images/logo.png" alt="Catskill Mt. Leather Co. Logo" class="nav-logo-img">
+                </a>
+            </div>
+            <ul class="side-nav-menu">
+                <li class="nav-dropdown">
+                    <a href="about.html" class="nav-link dropdown-toggle">About Us <span class="dropdown-arrow">▼</span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="about.html" class="dropdown-link" data-tab="history">Our History</a></li>
+                        <li><a href="about.html" class="dropdown-link" data-tab="mission">Our Mission</a></li>
+                        <li><a href="about.html" class="dropdown-link" data-tab="makers">Meet Your Makers</a></li>
+                        <li><a href="about.html" class="dropdown-link" data-tab="schedule">Show Schedule</a></li>
+                        <li><a href="about.html" class="dropdown-link" data-tab="famous">Famous Footwear</a></li>
+                    </ul>
+                </li>
+                <li class="nav-dropdown">
+                    <a href="custom-design.html" class="nav-link dropdown-toggle">Shop <span class="dropdown-arrow">▼</span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="custom-design.html" class="dropdown-link">Custom Design Options</a></li>
+                        <li><a href="price-quote.html" class="dropdown-link">Price Quote Submission Form</a></li>
+                        <li><a href="care-guide.html" class="dropdown-link">Wear &amp; Care</a></li>
+                    </ul>
+                </li>
+                <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+                <li><a href="order-status.html" class="nav-link">Check My Order Status</a></li>
+                <li><a href="payment.html" class="nav-link">Make a Payment</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Overlay Div -->
+    <div class="nav-overlay" id="navOverlay"></div>
+
+    <main>
+        <!-- Shop Tab Navigation -->
+        <section class="about-tabs-section" style="margin-bottom: 0.5em;">
+            <div class="content-container">
+                <nav class="about-tabs">
+                    <button class="tab-button" onclick="window.location.href='custom-design.html'">Custom Design Options</button>
+                    <button class="tab-button active" onclick="window.location.href='price-quote.html'">Price Quote Submission Form</button>
+                    <button class="tab-button" onclick="window.location.href='care-guide.html'">Wear & Care</button>
+                </nav>
+            </div>
+        </section>
+
+        <!-- Move the quote heading and form directly after the navigation, with less top margin -->
+        <section>
+            <div class="content-container">
+                <form class="quote-form-modern" autocomplete="on" style="margin-top: 0.5em;">
+                    <h2 style="margin-top:0;">Request a Custom Moccasin Quote</h2>
+                    <p style="margin-bottom:2em;">Fill out as much as you can—our team will follow up with a personalized quote and any questions.</p>
+
+                    <!-- Contact Information -->
+                    <div class="form-section">
+                        <h3>Contact Information</h3>
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required autocomplete="name">
+
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required autocomplete="email">
+
+                        <label for="address">Address</label>
+                        <input type="text" id="address" name="address" autocomplete="street-address">
+
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" autocomplete="tel">
+                    </div>
+
+                    <!-- Buttons -->
+                    <div class="form-section">
+                        <label for="num-buttons">Number of Buttons</label>
+                        <select id="num-buttons" name="num-buttons" required>
+                            <option value="">Select</option>
+                            <option>1</option><option>2</option><option>3</option><option>4</option>
+                            <option>5</option><option>6</option><option>7</option><option>8</option>
+                            <option>9</option><option>10</option>
+                        </select>
+                    </div>
+
+                    <!-- Leather -->
+                    <div class="form-section">
+                        <label for="leather-type">Leather</label>
+                        <select id="leather-type" name="leather-type" required>
+                            <option value="">Select</option>
+                            <option value="Buffalo">Buffalo</option>
+                            <option value="Bullhide">Bullhide</option>
+                        </select>
+                    </div>
+
+                    <!-- Base Color (conditional options) -->
+                    <div class="form-section">
+                        <label for="base-color">Base Color</label>
+                        <select id="base-color" name="base-color" required>
+                            <option value="">Select</option>
+                            <!-- Buffalo Hide options -->
+                            <optgroup label="Buffalo Hide">
+                                <option>Black</option>
+                                <option>Chocolate</option>
+                                <option>Redwood</option>
+                                <option>Tobacco</option>
+                                <option>Saddle</option>
+                                <option>Sand</option>
+                                <option>Palomino</option>
+                            </optgroup>
+                            <!-- Shrunken Bull Hide options -->
+                            <optgroup label="Shrunken Bull Hide">
+                                <option>Black</option>
+                                <option>Chocolate</option>
+                                <option>Redwood</option>
+                                <option>Tobacco</option>
+                                <option>Navy</option>
+                                <option>Turquoise</option>
+                                <option>Teal</option>
+                                <option>Purple</option>
+                                <option>Red</option>
+                                <option>Hot Pink</option>
+                                <option>Sand</option>
+                                <option>Golden</option>
+                                <option>Cream</option>
+                                <option>Lead</option>
+                                <option>Cobalt</option>
+                            </optgroup>
+                        </select>
+                    </div>
+
+                    <!-- Number of Trim Layers -->
+                    <div class="form-section">
+                        <label for="trim-layers">Number of Trim Layers</label>
+                        <select id="trim-layers" name="trim-layers" required>
+                            <option value="">Select</option>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                        </select>
+                    </div>
+
+                    <!-- Type of Trim Leather -->
+                    <div class="form-section">
+                        <label for="trim-leather-type">Type of Trim Leather</label>
+                        <select id="trim-leather-type" name="trim-leather-type" required onchange="updateTrimTypeOptions()">
+                            <option value="">Select</option>
+                            <option value="Finished - Bull">Finished - Bull</option>
+                            <option value="Finished - Buffalo">Finished - Buffalo</option>
+                            <option value="Finished - Deer">Finished - Deer</option>
+                            <option value="Natural - Buffalo">Natural - Buffalo</option>
+                            <option value="Natural - Deer">Natural - Deer</option>
+                        </select>
+                    </div>
+
+                    <!-- Type of Trim -->
+                    <div class="form-section">
+                        <label for="trim-type">Type of Trim</label>
+                        <select id="trim-type" name="trim-type" required onchange="showTrimOther()">
+                            <!-- Options will be dynamically populated -->
+                        </select>
+                        <div id="trim-type-other-container" style="display:none;">
+                            <label for="trim-type-other">If you selected “Other” or “Carved”, please describe:</label>
+                            <input type="text" id="trim-type-other" name="trim-type-other" placeholder="Describe trim or carved option">
+                        </div>
+                    </div>
+
+                    <!-- Additional Layers (dynamic based on number of layers) -->
+                    <div class="form-section">
+                        <label for="additional-layers">Type for Any Additional Layers</label>
+                        <select id="additional-layers" name="additional-layers">
+                            <option value="">Same as original trim type</option>
+                            <option value="NotSame">Not the same as original trim type</option>
+                        </select>
+                        <!-- For each layer, add dropdowns for trim type and color -->
+                        <!-- Example for Layer 1 -->
+                        <div>
+                            <label for="layer1-type">Layer 1 Type</label>
+                            <select id="layer1-type" name="layer1-type">
+                                <option value="">Select</option>
+                                <option>Standard</option>
+                                <option>Curved</option>
+                                <option>Dragon</option>
+                                <option>Irregular</option>
+                                <option>Leaf</option>
+                                <option>Lightning Bolt</option>
+                                <option>Lynns Flower</option>
+                                <option>Oak</option>
+                                <option>Peacock</option>
+                                <option>Rose</option>
+                                <option>Wolf</option>
+                                <option>Other</option>
+                            </select>
+                            <label for="layer1-leather">Layer 1 Leather</label>
+                            <select id="layer1-leather" name="layer1-leather">
+                                <option value="">Select</option>
+                                <option>Bullhide</option>
+                                <option>Buffalo</option>
+                                <option>Deer</option>
+                            </select>
+                            <label for="layer1-color">Layer 1 Color</label>
+                            <select id="layer1-color" name="layer1-color">
+                                <option value="">Select</option>
+                                <!-- Bullhide colors -->
+                                <option>Black</option>
+                                <option>Chocolate</option>
+                                <option>Redwood</option>
+                                <option>Tobacco</option>
+                                <option>Saddle</option>
+                                <option>Sand</option>
+                                <option>Palomino</option>
+                                <!-- Buffalo colors -->
+                                <option>Navy</option>
+                                <option>Turquoise</option>
+                                <option>Teal</option>
+                                <option>Purple</option>
+                                <option>Red</option>
+                                <option>Hot Pink</option>
+                                <option>Golden</option>
+                                <option>Cream</option>
+                                <option>Lead</option>
+                                <option>Cobalt</option>
+                                <!-- Deer colors -->
+                                <option>Mahogany</option>
+                                <option>Rust</option>
+                                <option>Golden</option>
+                                <option>Braintan</option>
+                                <option>White</option>
+                                <option>Gray</option>
+                                <option>Royal Blue</option>
+                                <option>Forest Green</option>
+                            </select>
+                        </div>
+                        <div style="margin-bottom:1em;">
+                            <label for="additional-layers-details">If 2, 3, or 4 layers of trim, please specify the leather/color:</label>
+                            <input type="text" id="additional-layers-details" name="additional-layers-details" placeholder="Describe leathers and colors for layers 2, 3, or 4">
+                        </div>
+                    </div>
+
+                    <!-- Tabs Section -->
+                    <div class="form-section">
+                        <label for="tab-leather">Tab Leather</label>
+                        <select id="tab-leather" name="tab-leather">
+                            <option value="">Select</option>
+                            <option>Bullhide</option>
+                            <option>Buffalo</option>
+                        </select>
+
+                        <label for="tab-color">Tab Color</label>
+                        <select id="tab-color" name="tab-color">
+                            <option value="">Select</option>
+                            <!-- Bullhide colors -->
+                            <option>Black</option>
+                            <option>Chocolate</option>
+                            <option>Redwood</option>
+                            <option>Tobacco</option>
+                            <option>Saddle</option>
+                            <option>Sand</option>
+                            <option>Palomino</option>
+                            <!-- Buffalo colors -->
+                            <option>Navy</option>
+                            <option>Turquoise</option>
+                            <option>Teal</option>
+                            <option>Purple</option>
+                            <option>Red</option>
+                            <option>Hot Pink</option>
+                            <option>Golden</option>
+                            <option>Cream</option>
+                            <option>Lead</option>
+                            <option>Cobalt</option>
+                        </select>
+
+                        <label for="tab-type">Tab Type</label>
+                        <select id="tab-type" name="tab-type" onchange="showTabOptions()">
+                            <option value="">Select</option>
+                            <option>Standard</option>
+                            <option>Shaped</option>
+                            <option>Laminated</option>
+                            <option>Natural - Single Layer (Buffalo)</option>
+                            <option>Natural - Double Layer (Buffalo & Deer)</option>
+                            <option>Carved</option>
+                        </select>
+
+                        <!-- Shaped options -->
+                        <div id="tab-shaped-options" style="display:none;">
+                            <label for="tab-shape">If Shaped, select type:</label>
+                            <select id="tab-shape" name="tab-shape">
+                                <option value="">Select</option>
+                                <option>Leaf</option>
+                                <option>Heart</option>
+                                <option>Custom</option>
+                            </select>
+                        </div>
+                        <!-- Laminated options -->
+                        <div id="tab-laminated-options" style="display:none;">
+                            <label for="tab-laminated-color">If Laminated, pick color:</label>
+                            <select id="tab-laminated-color" name="tab-laminated-color">
+                                <option value="">Select</option>
+                                <option>Black</option>
+                                <option>Chocolate</option>
+                                <option>Mahogany</option>
+                                <option>Redwood</option>
+                                <option>Rust</option>
+                                <option>Tobacco</option>
+                                <option>Golden</option>
+                                <option>Saddle</option>
+                                <option>Palomino</option>
+                                <option>Braintan</option>
+                                <option>Cream</option>
+                                <option>White</option>
+                                <option>Gray</option>
+                                <option>Royal Blue</option>
+                                <option>Forest Green</option>
+                                <option>Purple</option>
+                                <option>Turquoise</option>
+                                <option>Hot Pink</option>
+                            </select>
+                        </div>
+                        <!-- Carved options -->
+                        <div id="tab-carved-options" style="display:none;">
+                            <label for="tab-carved-desc">If Carved, please describe:</label>
+                            <input type="text" id="tab-carved-desc" name="tab-carved-desc" placeholder="Describe carved tab">
+                        </div>
+                    </div>
+
+                    <!-- Buttons -->
+                    <div class="form-section">
+                        <label for="button-type">Button Type</label>
+                        <select id="button-type" name="button-type" onchange="showButtonOptions()">
+                            <option value="">Select</option>
+                            <option value="Quicksilver">Quicksilver</option>
+                            <option value="Hand-stamped">Hand-stamped</option>
+                            <option value="Coins">Coins</option>
+                            <option value="Antler">Antler</option>
+                            <option value="Glass">Glass</option>
+                        </select>
+
+                        <!-- Quicksilver options -->
+                        <div id="quicksilver-options" style="display:none;">
+                            <label for="quicksilver-metal">Quicksilver Metal</label>
+                            <select id="quicksilver-metal" name="quicksilver-metal">
+                                <option value="">Select</option>
+                                <option>Copper</option>
+                                <option>Bronze</option>
+                                <option>Nickel Silver</option>
+                                <option>Solid Silver</option>
+                            </select>
+                            <label for="quicksilver-style">Quicksilver Style</label>
+                            <input type="text" id="quicksilver-style" name="quicksilver-style" placeholder="Style (see brochure)">
+                            <a href="https://cdn.shopify.com/s/files/1/0563/0515/6259/files/quicksilvermint-brochure-order.pdf?v=1619380113" target="_blank">View Quicksilver Styles PDF</a>
+                        </div>
+
+                        <!-- Hand-stamped options -->
+                        <div id="hand-stamped-options" style="display:none;">
+                            <label for="hand-stamped-gem">Hand-stamped: With or Without Gemstones</label>
+                            <select id="hand-stamped-gem" name="hand-stamped-gem">
+                                <option value="">Select</option>
+                                <option>With Gemstones</option>
+                                <option>Without Gemstones</option>
+                            </select>
+                        </div>
+
+                        <!-- Coins options -->
+                        <div id="coins-options" style="display:none;">
+                            <label for="coin-type">Coin Type</label>
+                            <select id="coin-type" name="coin-type">
+                                <option value="">Select</option>
+                                <option>British Half Penny</option>
+                                <option>One Penny</option>
+                            </select>
+                        </div>
+
+                        <!-- Antler options -->
+                        <div id="antler-options" style="display:none;">
+                            <label for="antler-type">Antler Type</label>
+                            <select id="antler-type" name="antler-type">
+                                <option value="">Select</option>
+                                <option>Crowns - Natural</option>
+                                <option>Crowns - Burnt</option>
+                                <option>Sidecuts - Polished (Natural)</option>
+                                <option>Sidecuts - Polished (Dyed)</option>
+                                <option>Sidecuts - Polished (Burnt)</option>
+                                <option>Sidecuts - Unpolished</option>
+                            </select>
+                            <label for="antler-dye">If Dyed: Dye Color</label>
+                            <select id="antler-dye" name="antler-dye">
+                                <option value="">Select</option>
+                                <option>Black</option>
+                                <option>Walnut</option>
+                                <option>Custom</option>
+                            </select>
+                        </div>
+
+                        <!-- Glass options (hidden by default) -->
+                        <div id="glass-options" style="display:none;">
+                            <label for="glass-type">Glass Button Type</label>
+                            <select id="glass-type" name="glass-type">
+                                <option value="">Select</option>
+                                <option>Ring-backed</option>
+                                <option>Two Hole</option>
+                            </select>
+                            <label for="glass-color">Glass Button Colors</label>
+                            <input type="text" id="glass-color" name="glass-color" placeholder="Choose from Buttons Page or describe">
+                        </div>
+                    </div>
+
+                    <!-- Edge Treatment -->
+                    <div class="form-section">
+                        <label for="edge-treatment">Edge Treatment</label>
+                        <select id="edge-treatment" name="edge-treatment">
+                            <option value="">Select</option>
+                            <option>Full Welting</option>
+                            <option>Natural Top Flap</option>
+                            <option>Straight Top Flap</option>
+                            <option>Top Welting</option>
+                        </select>
+                        <label for="edge-color">Edge Color</label>
+                        <select id="edge-color" name="edge-color">
+                            <option value="">Select</option>
+                            <option>Black</option>
+                            <option>Chocolate</option>
+                            <option>Mahogany</option>
+                            <option>Redwood</option>
+                            <option>Rust</option>
+                            <option>Tobacco</option>
+                            <option>Golden</option>
+                            <option>Saddle</option>
+                            <option>Palomino</option>
+                            <option>Braintan</option>
+                            <option>Cream</option>
+                            <option>White</option>
+                            <option>Gray</option>
+                            <option>Royal Blue</option>
+                            <option>Forest Green</option>
+                            <option>Purple</option>
+                            <option>Turquoise</option>
+                            <option>Hot Pink</option>
+                        </select>
+                    </div>
+
+                    <!-- Heels -->
+                    <div class="form-section">
+                        <label for="heel-type">Heel Type</label>
+                        <select id="heel-type" name="heel-type" onchange="showHeelCustomField()">
+                            <option value="">Select</option>
+                            <option value="Standard">Standard</option>
+                            <option value="Lotus">Lotus</option>
+                            <option value="Single Point">Single Point</option>
+                            <option value="Double Point">Double Point</option>
+                            <option value="Lynns Flower">Lynn’s Flower</option>
+                            <option value="Custom">Custom</option>
+                        </select>
+                        <div id="heel-custom-container" style="display:none;">
+                            <label for="heel-custom">If Custom, please describe:</label>
+                            <input type="text" id="heel-custom" name="heel-custom" placeholder="Describe custom heel">
+                        </div>
+
+                        <label for="heel-color">Heel Color</label>
+                        <select id="heel-color" name="heel-color">
+                            <option value="">Select</option>
+                            <option>Black</option>
+                            <option>Chocolate</option>
+                            <option>Redwood</option>
+                            <option>Tobacco</option>
+                            <option>Turquoise</option>
+                            <option>Teal</option>
+                            <option>Purple</option>
+                            <option>Red</option>
+                            <option>Sand</option>
+                            <option>Golden</option>
+                            <option>Cream</option>
+                            <option>Lead</option>
+                        </select>
+                    </div>
+
+                    <!-- Laces -->
+                    <div class="form-section">
+                        <label for="laces">Laces</label>
+                        <select id="laces" name="laces">
+                            <option value="">Select</option>
+                            <option>Standard</option>
+                            <option>Braided</option>
+                        </select>
+                    </div>
+
+                    <!-- Soles -->
+                    <div class="form-section">
+                        <label for="soles">Soles</label>
+                        <select id="soles" name="soles">
+                            <option value="">Select</option>
+                            <option>Vibram Newflex</option>
+                            <option>Conveyor Belt</option>
+                        </select>
+                    </div>
+
+                    <!-- Additional Comments -->
+                    <div class="form-section">
+                        <label for="comments">Additional Comments or Special Instructions</label>
+                        <textarea id="comments" name="comments" placeholder="Anything else we should know?"></textarea>
+                    </div>
+
+                    <button type="submit">Request My Quote</button>
+                    <p style="font-size:0.95em; color:#7c5c2b; margin-top:1.5em;">
+                        Questions About Your Quote? 
+                        Email <a href="mailto:info@catskillmoccasins.com">info@catskillmoccasins.com</a> or call <a href="tel:845-679-7302">845-679-7302</a>.
+                    </p>
+                </form>
+            </div>
+        </section>
+    </main>
+   
+    <script src="scripts/main.js"></script>
+    <script>
+        // filepath: /Users/keelywilson/Catskill MM Website/price-quote.html
+        function showButtonOptions() {
+            var type = document.getElementById('button-type').value;
+            document.getElementById('quicksilver-options').style.display = (type === 'Quicksilver') ? 'block' : 'none';
+            document.getElementById('hand-stamped-options').style.display = (type === 'Hand-stamped') ? 'block' : 'none';
+            document.getElementById('coins-options').style.display = (type === 'Coins') ? 'block' : 'none';
+            document.getElementById('antler-options').style.display = (type === 'Antler') ? 'block' : 'none';
+            document.getElementById('glass-options').style.display = (type === 'Glass') ? 'block' : 'none';
+        }
+
+        function showTabOptions() {
+            var tabType = document.getElementById('tab-type').value;
+            document.getElementById('tab-shaped-options').style.display = (tabType === 'Shaped') ? 'block' : 'none';
+            document.getElementById('tab-laminated-options').style.display = (tabType === 'Laminated') ? 'block' : 'none';
+            document.getElementById('tab-carved-options').style.display = (tabType === 'Carved') ? 'block' : 'none';
+        }
+
+        // Helper: color options for each leather type
+        const colorOptions = {
+            Buffalo: [
+                "Black", "Chocolate", "Redwood", "Tobacco", "Saddle", "Sand", "Palomino"
+            ],
+            Bullhide: [
+                "Black", "Chocolate", "Redwood", "Tobacco", "Turquoise", "Teal", "Purple", "Red", "Sand", "Golden", "Cream", "Lead"
+            ],
+            Deer: [
+                "Black", "Chocolate", "Mahogany", "Redwood", "Tobacco", "Golden", "Saddle", "Palomino", "Cream", "White", "Gray", "Royal Blue", "Purple", "Turquoise", "Hot Pink"
+            ]
+        };
+
+        // Update Base Color options based on Leather selection
+        document.getElementById('leather-type').addEventListener('change', function() {
+            const leather = this.value;
+            const baseColorSelect = document.getElementById('base-color');
+            baseColorSelect.innerHTML = '<option value="">Select</option>';
+            if (colorOptions[leather]) {
+                colorOptions[leather].forEach(function(color) {
+                    baseColorSelect.innerHTML += `<option>${color}</option>`;
+                });
+            }
+        });
+
+        // Update Trim Layer Color options based on Layer Leather selection
+        function updateLayerColorOptions(layerNum) {
+            const leatherSelect = document.getElementById(`layer${layerNum}-leather`);
+            const colorSelect = document.getElementById(`layer${layerNum}-color`);
+            const leather = leatherSelect.value;
+            colorSelect.innerHTML = '<option value="">Select</option>';
+            if (colorOptions[leather]) {
+                colorOptions[leather].forEach(function(color) {
+                    colorSelect.innerHTML += `<option>${color}</option>`;
+                });
+            }
+        }
+
+        // Update Tab Color options based on Tab Leather selection
+        document.getElementById('tab-leather').addEventListener('change', function() {
+            const leather = this.value;
+            const tabColorSelect = document.getElementById('tab-color');
+            tabColorSelect.innerHTML = '<option value="">Select</option>';
+            if (colorOptions[leather]) {
+                colorOptions[leather].forEach(function(color) {
+                    tabColorSelect.innerHTML += `<option>${color}</option>`;
+                });
+            }
+        });
+
+        // Dynamically show trim layer fields based on number selected
+        function showTrimLayers() {
+            var num = parseInt(document.getElementById('trim-layers').value) || 0;
+            var container = document.getElementById('trim-layers-container');
+            var additionalInfo = document.getElementById('additional-layers-info');
+            container.innerHTML = '';
+            for (let i = 1; i <= num; i++) {
+                container.innerHTML += `
+                <fieldset style="margin-bottom:1em;">
+                    <legend>Layer ${i}</legend>
+                    <label for="layer${i}-type">Layer Type</label>
+                    <select id="layer${i}-type" name="layer${i}-type">
+                        <option value="">Select</option>
+                        <option>Standard</option>
+                        <option>Curved</option>
+                        <option>Dragon</option>
+                        <option>Irregular</option>
+                        <option>Leaf</option>
+                        <option>Lightning Bolt</option>
+                        <option>Lynns Flower</option>
+                        <option>Oak</option>
+                        <option>Peacock</option>
+                        <option>Rose</option>
+                        <option>Wolf</option>
+                        <option>Other</option>
+                    </select>
+                    <label for="layer${i}-leather">Layer Leather</label>
+                    <select id="layer${i}-leather" name="layer${i}-leather" onchange="updateLayerColorOptions(${i})">
+                        <option value="">Select</option>
+                        <option>Buffalo</option>
+                        <option>Bullhide</option>
+                        <option>Deer</option>
+                    </select>
+                    <label for="layer${i}-color">Layer Color</label>
+                    <select id="layer${i}-color" name="layer${i}-color">
+                        <option value="">Select</option>
+                    </select>
+                </fieldset>
+                `;
+            }
+            // Show open field if more than 1 layer
+            additionalInfo.style.display = (num > 1) ? 'block' : 'none';
+        }
+        document.getElementById('trim-layers').addEventListener('change', showTrimLayers);
+
+        function showTrimOther() {
+            var val = document.getElementById('trim-type').value;
+            document.getElementById('trim-type-other-container').style.display =
+                (val === 'Other' || val === 'Carved') ? 'block' : 'none';
+        }
+
+        function updateTrimTypeOptions() {
+            var trimTypeSelect = document.getElementById('trim-type');
+            var trimLeatherType = document.getElementById('trim-leather-type').value;
+            trimTypeSelect.innerHTML = ''; // Clear previous options
+
+            if (trimLeatherType.startsWith('Finished')) {
+                trimTypeSelect.innerHTML = `
+                    <option value="">Select</option>
+                    <option>Standard</option>
+                    <option>Curved</option>
+                    <option>Dragon</option>
+                    <option>Irregular</option>
+                    <option>Leaf</option>
+                    <option>Lightning Bolt</option>
+                    <option>Lynns Flower</option>
+                    <option>Oak</option>
+                    <option>Peacock</option>
+                    <option>Rose</option>
+                    <option>Wolf</option>
+                    <option>Carved</option>
+                    <option>Other</option>
+                `;
+            } else if (trimLeatherType.startsWith('Natural')) {
+                trimTypeSelect.innerHTML = `
+                    <option value="">Select</option>
+                    <option>Full Overlay</option>
+                    <option>Natural</option>
+                    <option>Natural Inside Seam Trim</option>
+                `;
+            }
+        }
+
+        // filepath: /Users/keelywilson/Catskill MM Website/price-quote.html
+        function showHeelOptions() {
+            var heelType = document.getElementById('heel-type').value;
+            document.getElementById('heel-shaped-options').style.display = (heelType === 'Shaped') ? 'block' : 'none';
+            showHeelCustomField();
+        }
+        function showHeelCustomField() {
+            var heelType = document.getElementById('heel-type').value;
+            document.getElementById('heel-custom-container').style.display = (heelType === 'Custom') ? 'block' : 'none';
+        }
+    </script>
+    <script>
+    // filepath: /Users/keelywilson/Catskill MM Website/price-quote.html
+    document.addEventListener('DOMContentLoaded', function() {
+        var menuToggle = document.querySelector('.menu-toggle');
+        var sideNav = document.getElementById('sideNav');
+        var closeBtn = document.querySelector('.close-btn');
+        var navOverlay = document.getElementById('navOverlay');
+        // Open menu
+        if (menuToggle && sideNav && navOverlay) {
+            menuToggle.addEventListener('click', function() {
+                sideNav.style.display = 'block';
+                navOverlay.style.display = 'block';
+                document.body.style.overflow = 'hidden';
+            });
+        }
+        // Close menu
+        function closeMenu() {
+            sideNav.style.display = 'none';
+            navOverlay.style.display = 'none';
+            document.body.style.overflow = '';
+        }
+        if (closeBtn && sideNav && navOverlay) {
+            closeBtn.addEventListener('click', closeMenu);
+        }
+        // Close menu when clicking overlay
+        if (navOverlay) {
+            navOverlay.addEventListener('click', closeMenu);
+        }
+        // Responsive: close on ESC key
+        window.addEventListener('keydown', function(e) {
+            if (e.key === "Escape" && sideNav.style.display === 'block') {
+                closeMenu();
+            }
+        });
+    });
+    </script>
+</body>
+</html>
+

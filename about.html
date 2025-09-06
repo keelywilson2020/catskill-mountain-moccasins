@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Catskill Mt. Leather Co.</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <style>
+        .tab-content { display: none; }
+        .tab-content.active { display: block; }
+        .tab-button.active { /* Add your active button styles here */ }
+
+        /* Renaissance Festival Schedule Styling */
+        .renaissance-schedule {
+            margin: 2em 0;
+            background: linear-gradient(135deg, #f8f6f2 0%, #ede8dc 100%);
+            border-radius: 12px;
+            padding: 2em;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            border: 2px solid #d4c4a8;
+        }
+
+        .schedule-header {
+            text-align: center;
+            margin-bottom: 2em;
+        }
+
+        .schedule-title-with-swords {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1.5em;
+            margin-bottom: 1em;
+        }
+
+        .schedule-title-with-swords h3 {
+            font-size: 2.2em;
+            color: #8b4513;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+            margin: 0;
+        }
+
+        .schedule-sword {
+            width: 60px;
+            height: auto;
+        }
+
+        .wooden-divider {
+            height: 4px;
+            background: linear-gradient(90deg, #8b4513, #d2b48c, #8b4513);
+            border-radius: 2px;
+            margin: 0 auto;
+            max-width: 300px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .schedule-table-container {
+            overflow-x: auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .schedule-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .schedule-table th {
+            background: linear-gradient(135deg, #8b4513, #a0522d);
+            color: white;
+            padding: 1em;
+            text-align: left;
+            font-weight: bold;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+
+        .schedule-table td {
+            padding: 0.8em 1em;
+            border-bottom: 1px solid #e2d7c3;
+            transition: background-color 0.2s ease;
+        }
+
+        .schedule-table tr:nth-child(even) {
+            background-color: #faf9f7;
+        }
+
+        .schedule-table tr:hover {
+            background-color: #f0ebe3;
+        }
+
+        .schedule-table a {
+            color: #8b4513;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.2s ease;
+        }
+
+        .schedule-table a:hover {
+            color: #d2b48c;
+            text-decoration: underline;
+        }
+
+        .schedule-footer {
+            margin-top: 1.5em;
+            text-align: center;
+        }
+
+        .schedule-footer p {
+            font-style: italic;
+            color: #6b5b73;
+            font-size: 1.1em;
+        }
+
+        /* Responsive design for smaller screens */
+        @media (max-width: 768px) {
+            .schedule-title-with-swords {
+                flex-direction: column;
+                gap: 1em;
+            }
+            
+            .schedule-title-with-swords h3 {
+                font-size: 1.8em;
+            }
+            
+            .schedule-sword {
+                width: 40px;
+            }
+            
+            .renaissance-schedule {
+                padding: 1.5em;
+            }
+            
+            .schedule-table th,
+            .schedule-table td {
+                padding: 0.6em 0.8em;
+                font-size: 0.9em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <h1><a href="index.html" style="text-decoration: none; color: inherit;">Catskill Mt. Leather Co.</a></h1>
+            <button class="menu-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Side Navigation Popout -->
+    <nav class="side-nav" id="sideNav">
+        <div class="side-nav-content">
+            <button class="close-btn" aria-label="Close navigation">&times;</button>
+            <div class="nav-logo">
+                <a href="index.html" class="nav-logo-link">
+                    <img src="images/logo.png" alt="Catskill Mt. Leather Co. Logo" class="nav-logo-img">
+                </a>
+            </div>
+            <ul class="side-nav-menu">
+                <li class="nav-dropdown">
+                    <a href="about.html" class="nav-link dropdown-toggle">About Us <span class="dropdown-arrow">▼</span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="about.html" class="dropdown-link" data-tab="history">Our History</a></li>
+                        <li><a href="about.html" class="dropdown-link" data-tab="mission">Our Mission</a></li>
+                        <li><a href="about.html" class="dropdown-link" data-tab="makers">Meet Your Makers</a></li>
+                        <li><a href="about.html" class="dropdown-link" data-tab="schedule">Show Schedule</a></li>
+                        <li><a href="about.html" class="dropdown-link" data-tab="famous">Famous Footwear</a></li>
+                    </ul>
+                </li>
+                <li class="nav-dropdown">
+                    <a href="custom-design.html" class="nav-link dropdown-toggle">Shop <span class="dropdown-arrow">▼</span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="custom-design.html" class="dropdown-link">Custom Design Options</a></li>
+                        <li><a href="price-quote.html" class="dropdown-link">Price Quote Submission Form</a></li>
+                        <li><a href="care-guide.html" class="dropdown-link">Wear &amp; Care</a></li>
+                    </ul>
+                </li>
+                <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+                <li><a href="order-status.html" class="nav-link">Check My Order Status</a></li>
+                <li><a href="payment.html" class="nav-link">Make a Payment</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Overlay for side navigation -->
+    <div class="nav-overlay" id="navOverlay"></div>
+
+    <main>
+        <!-- About Us Tab Navigation -->
+        <section class="about-tabs-section">
+            <div class="content-container">
+                <nav class="about-tabs">
+                    <button class="tab-button active" data-tab="history">Our History</button>
+                    <button class="tab-button" data-tab="mission">Our Mission</button>
+                    <button class="tab-button" data-tab="makers">Meet Your Makers</button>
+                    <button class="tab-button" data-tab="schedule">Show Schedule</button>
+                    <button class="tab-button" data-tab="famous">Famous Footwear</button>
+                </nav>
+            </div>
+        </section>
+
+        <!-- Tab Content -->
+        <section class="page-content">
+            <!-- Our History Tab -->
+            <div class="tab-content active" id="history">
+                <h2>Our History</h2>
+                <div class="content-container">
+                <p>Catskill Mountain Moccasins was founded in 1987 in Woodstock, New York, by Mark Goldfarb and Diane Genninger. Today, we're a family of dedicated artisans with over 125 years of combined experience in crafting high-quality moccasins.</p>
+                
+                <p>Together with Lynn Collins, we began our journey by exhibiting at renaissance festivals and craft fairs across the country. From the start, we've been committed to creating exceptional footwear, offering outstanding customer service, and fostering a strong sense of family and shared values among our team. That dedication has fueled our steady, organic growth, and today, we're proud to be the most experienced custom footwear company in the United States.</p>
+                
+                <p>Over the past 38 years, nearly four decades, a number of incredibly talented artisans have joined our team. Some were trained through Mark's apprenticeship program, while others brought their own expertise as accomplished footwear designers.</p>
+                
+                <p>Though we come from diverse backgrounds, we share a common goal: to design, create, and deliver the most comfortable footwear you'll ever own.</p>
+                </div>
+            </div>
+
+            <!-- Our Mission Tab -->
+            <div class="tab-content" id="mission">
+                <h2>Our Mission</h2>
+                <div class="content-container">
+                    <div class="mission-content-with-images">
+                        <div class="mission-top-section">
+                            <div class="mission-image-left">
+                                <img src="images/extra-images/craftsmanship.jpeg" alt="Craftsman at work creating handmade moccasins" class="mission-side-img">
+                            </div>
+                            <div class="mission-intro-text">
+                                <p>Our mission is to craft the finest custom-made footwear available.</p>
+                                <p>We fulfill this mission by adhering to a set of simple, yet essential principles:</p>
+                            </div>
+                            <div class="mission-image-right">
+                                <img src="images/extra-images/workpic.jpeg" alt="Quality craftsmanship details" class="mission-side-img">
+                            </div>
+                        </div>
+                        <div class="mission-principles">
+                            <p><strong>Precision Matters:</strong> Every pair is made to the exact specifications requested by the customer—no exceptions.</p>
+                            
+                            <p><strong>Quality from the Start:</strong> Each piece of leather is carefully inspected before cutting to ensure it's free from imperfections that could affect durability or appearance.</p>
+                            
+                            <p><strong>Full Transparency:</strong> Customers have 24/7 access to their order status, including payment details, production updates, and delivery timelines.</p>
+                            
+                            <p><strong>We Make It Right:</strong> Our philosophy is simple—if there's a problem, we fix it. We'll repair or remake your moccasins if needed. All materials and craftsmanship are guaranteed for one year from the delivery date.</p>
+                            
+                            <p><strong>Customer First, Always:</strong> We're here for you—not the other way around.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Meet Your Makers Tab -->
+            <div class="tab-content" id="makers">
+                <h2>Meet Your Makers</h2>
+                <div class="content-container">
+                    <p class="makers-intro">Our talented team of artisans brings decades of experience and passion to every pair of moccasins we create.</p>
+                    
+                    <div class="makers-grid">
+                        <!-- Artisan 1 - Image Left, Text Right -->
+                        <div class="maker-profile left-image">
+                            <div class="maker-image" style="display: flex; flex-direction: column; align-items: center; gap: 1em;">
+                                <img src="images/artisans/markboat.jpeg" alt="Mark Goldfarb at work" class="artisan-img" style="max-width: 260px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.10);">
+                                <img src="images/artisans/sailormark.jpeg" alt="Mark Goldfarb sailing" class="artisan-img" style="max-width: 260px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.10);">
+                            </div>
+                            <div class="maker-text">
+                                <h3>Mark Goldfarb - Founder & Master Craftsman</h3>
+                                <p>Mark Goldfarb is a self-taught entrepreneur and master craftsman whose legacy spans artisanal leatherwork and culinary craftsmanship. In 1981, he launched Catskill Mountain Leather Co. Inc., a custom footwear brand that remains active today, its traditions carried on by generations of apprentices.
+                                <p>Mark later brought his passion and precision into the culinary world, founding In Mark’s Kitchen, LLC and Porcini LLC, where he has spent the past five years building a small-batch, artisanal pesto business grounded in quality, tradition, and honest methods.</p>
+                                <p>Beyond his creative ventures, Mark also manages rental properties, blending hands-on artistry with practical business sense. Without a college degree, he carved his path through self-education, drive, and curiosity.</p>
+                                <p>A lifelong sailor, passionate cook, and world traveler, Mark thrives in motion—on water, in the kitchen, and across new landscapes. Through mentorship and craftsmanship, he continues to shape lives and businesses with integrity and purpose.</p>
+                            </div>
+                        </div>
+
+                        <!-- Artisan 2 - Image Right, Text Left -->
+                        <div class="maker-profile right-image">
+                            <div class="maker-text">
+                                <h3>Lynn Collins: Salinda, CO; Making since 1979</h3>
+                                <p>After purchasing his first pair of custom footwear at the age of 16, Lynn knew that his calling in life was to create comfortable footwear for other people. He was fortunate to meet and apprentice with several moccasin makers in northern California where he lived at the time, before heading off on his own, eventually joining the Catskills family of artisans. Forty-six years and several thousand pairs of moccasins later, Lynn is still enjoying his craft and going strong at it! When not making moccasins, he enjoys spending time with his family, riding his horses and exploring the beautiful southern Colorado mountains where he lives.</p>
+                            </div>
+                            <div class="maker-image">
+                                <img src="images/artisans/lynn2.jpg" alt="Lynn Collins" class="artisan-img">
+                            </div>
+                        </div>
+
+                        <!-- Artisan 3 - Image Left, Text Right -->
+                        <div class="maker-profile left-image">
+                            <div class="maker-image">
+                                <img src="images/artisans/new-eric.jpeg" alt="Eric Peterson crafting" class="artisan-img">
+                            </div>
+                            <div class="maker-text">
+                                <h3>Eric Peterson: Allen, TX; Making since 1990</h3>
+                                <p>Born in Austin and raised in Dallas, Eric's life was largely normal and uneventful until he discovered moccasins! It was love at first sight. As soon as he saw Catskill's beautiful wares, he had to have a pair of his own. Then he horrified his friends by immediately slicing them up to see how they were made! But he got them back together again, and his apprenticeship had begun. Eric moved from his beloved Texas to Woodstock, NY to learn the craft of moccasin making from Catskill Mountain's founder, Mark Goldfarb. He returned to Texas a master Maker, and that's where he can be found when he's not travelling to various shows across the country to bring the world's most comfortable custom footwear to everyone!</p>
+<p>Current apprentices: "Fish" Scott</p>
+                            </div>
+                        </div>
+
+                        <!-- Artisan 4 - Image Right, Text Left -->
+                        <div class="maker-profile right-image">
+                            <div class="maker-text">
+                                <h3>Kurt Bundick: Hillsboro, TX; Making since 2008</h3>
+                                <p>This elusive and curious Maker began his journey with Catskills way back in 2008. Growing up in a military family, and after years of working in the international gaming industry, Kurt was already accustomed to traveling, and for many years was running from fair to fair helping our family of customers and making new ones. While he still owns and manages many of our Catskills booths, these days you can usually find him at his home in TX, raising his son and making our one-of-a-kind footwear, working hard to continue helping our moccasin family grow. On days when he has some free time, he likes to go fishing with his son.</p>
+                                <p>Current apprentices: Becca Randolph, Maria Bettencourt</p>
+                            </div>
+                            <div class="maker-image">
+                                <img src="images/artisans/kurt.jpg" alt="Kurt Bundick" class="artisan-img">
+                            </div>
+                        </div>
+
+                        <!-- Artisan 5 - Image Left, Text Right -->
+                        <div class="maker-profile left-image">
+                            <div class="maker-image">
+                                <img src="images/artisans/new-mike.jpeg" alt="Michael McIntyre" class="artisan-img">
+                            </div>
+                            <div class="maker-text">
+                                <h3>Michael McIntyre: Colorado Springs, CO; Making since 2013</h3>
+                                <p>Born in Nebraska, and raised all over the Midwest, Mike is a multi-talented do-it-yourselfer. Before becoming a Maker, Mike primarily worked in construction and auto repair. If it's broken, Mike is the guy that will know how to fix it. Mike is known in our company for his insanely ornate stitching abilities. We simply don't understand how he does it, but we're happy he does! A giant of a man, you may also recognize him from renaissance festival stages, where he plays his absolutely enormous drum in the band Celtic Legacy. When he's not making moccasins, he enjoys tending his garden and raising his six children.</p>
+                            </div>
+                        </div>
+
+                        <!-- Artisan 6 - Image Right, Text Left -->
+                        <div class="maker-profile right-image">
+                            <div class="maker-text">
+                                <h3>Matt Glascoe: Traveling Maker; Making since 2015</h3>
+                                <p>Originally from North Carolina, Matt specializes in carvings and unique concept designs. By far the slowest Maker in the company, Matt is unapologetically obsessed with the details and never lets a pair of moccasins leave his shop until they're exactly right. He's not fast, but his work is as clean as it gets. In his spare time, he enjoys reading, cooking for friends and family, and traveling with his beautiful better half. A seasoned musician, you can find him playing music at renaissance festivals around the country, as he is also a member of two national touring bagpipe bands, Tartanic and Celtic Legacy, in addition to his original contemporary project, Upstart Crow.</p>
+<p>Current apprentices: Jess Hoban</p>
+                            </div>
+                            <div class="maker-image">
+                                <img src="images/artisans/matt.jpg" alt="Matt Glascoe" class="artisan-img">
+                            </div>
+                        </div>
+
+                        <!-- Artisan 7 - Image Left, Text Right -->
+                        <div class="maker-profile left-image">
+                            <div class="maker-image">
+                                <img src="images/artisans/heather.jpg" alt="Heather Phelps" class="artisan-img" style="max-width: 260px; aspect-ratio: 1/1; object-fit: cover; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.10); background: #f8f6f2;">
+                            </div>
+                            <div class="maker-text">
+                                <h3>Heather Phelps: Canon City, CO; Making since 2023</h3>
+                                <p>Heather has been carving trims and doing artwork for Catskills since 2016, but in 2023 she finished her apprenticeship and is now a full-fledged Maker! Her favorite part of making moccasins is opening up a fresh shipment of hides, and letting the smell of leather engulf her like a warm hug. Heather specializes in carvings, with a particular gift for mixing dyes and paints for exact color matches. When she's not making moccasins, she enjoys drawing in nature, hiking, and spending time with her daughter. </p>
+                            </div>
+                        </div>
+
+                        <!-- Artisan 8 - Image Right, Text Left -->
+                        <div class="maker-profile right-image">
+                            <div class="maker-text">
+                                <h3>Suellyn Pena: Junction, CO; Making since 1980</h3>
+                                <p>Living in California, Suellyn first came into contact with our moccasins through a friend who was involved in selling, as well as making them. She purchased her first pair around 1978 and wondered to what degree she could interpret design in leather, through appliques and other techniques. With a move to Aspen in May of 1980, she was able to get a job with some moccasin Makers there. Little did she know it would turn into a life's work, but here she is 40 years later, still loving the work! Suellyn specializes in intricate appliques and layered work, interpreting our customers' dreams and ideas, while adding her own, and creating comfortable leather footwear that they will enjoy for many years.</p>
+                            </div>
+                            <div class="maker-image">
+                                <img src="images/artisans/sue-pena.jpg" alt="Artisan 8" class="artisan-img" style="max-width: 260px; aspect-ratio: 1/1; object-fit: cover; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.10); background: #f8f6f2;">
+                            </div>
+                        </div>
+
+                        <!-- Artisan 9 - Image Left, Text Right -->
+                        <div class="maker-profile left-image">
+                            <div class="maker-image">
+                                <img src="images/artisans/mikeheartless.jpeg" alt="Artisan 9" class="artisan-img" style="max-width: 260px; aspect-ratio: 1/1; object-fit: cover; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.10); background: #f8f6f2;">
+                            </div>
+                            <div class="maker-text">
+                                <h3>Mike Hartless: Rollins, MT; Making since 1993</h3>
+                                <p>Mike started off his career at renaissance festivals with his own leather and taxidermy booth, where he made and sold museum quality taxidermy, a hobby he still practices today - you can see his work firsthand at the Great Central Valley Museum in Modesto, CA. Originally from southern California, Mike first became interested in moccasins as a young teenager when he saw a performance of Sonny & Cher, and was drawn instantly to their killer footwear. Little did he know that a few years later he would meet the Makers of those moccasins, and learn how to make them himself! He was already an experienced leather worker, having taught himself how to make moccasins in the side-laced Apache style, but fell in love with the now iconic style and techniques of Catskill Mountain Moccasins. Thousands of pairs later, he's still at it! Mike's favorite part of making moccasins is the detail of the finishing work - cleaning up the edges, and putting in those little final touches that really make a moccasin beautiful.</p>
+                            </div>
+                        </div>
+
+                        <!-- Artisan 8 - Image Right, Text Left -->
+                        <div class="maker-profile right-image">
+                            <div class="maker-text">
+                                <h3>Maxime Simmer: Gibsonville, NC; Making since 2019</h3>
+                                <p>Maxime is a consummate artist, through and through. Their ability to envision and bring to life new ideas is truly remarkable. Before making moccasins, Max was the creator of custom-fit corsets with intricate stitching and design work - a natural precursor to making moccasins! Maxime's favorite part of making moccasins is when they get the chance to make high realism carved and painted fantasy designs. These designs certainly take time, but Max treats each and every pair like a masterpiece, and simply will not rush perfection! When Max isn't making moccasins, they put their attention to detail towards crafting leather items of a spicier variety (search online for Mad Minx Creations). When they're not working with leather, they enjoy foraging and hiking with their dogs, kayaking, and drawing.</p>
+                            </div>
+                            <div class="maker-image">
+                                <img src="images/artisans/maxime.jpg" alt="Artisan 8" class="artisan-img" style="max-width: 260px; aspect-ratio: 1/1; object-fit: cover; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.10); background: #f8f6f2;">
+                            </div>
+                        </div>
+
+                        <!-- Artisan 9 - Image Left, Text Right -->
+                        <div class="maker-profile left-image">
+                            <div class="maker-image">
+                                <img src="images/artisans/andrea.jpg" alt="Artisan 9" class="artisan-img" style="max-width: 260px; aspect-ratio: 1/1; object-fit: cover; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.10); background: #f8f6f2;">
+                            </div>
+                            <div class="maker-text">
+                                <h3>Andrea Machlan: Fort Wayne, IN; Making since 2017</h3>
+                                <p>Before making moccasins, Andrea worked as a master seamstress making custom clothing of all kinds, including period costuming and character design for renaissance and street performers. Born and raised in Fort Wayne, Andrea loves the quiet life in Indiana, where she maintains a truly impressive garden at her house. She especially enjoys growing veggies and native plants, and loves all the good puns and "dad jokes" that come along with making footwear and sewing.</p>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Show Schedule Tab -->
+            <div class="tab-content" id="schedule">
+                <h2>Show Schedule</h2>
+                <div class="content-container">
+                    <p>Come visit us at these upcoming events where you can see our craftsmanship in person, get professionally fitted, and meet our artisans.</p>
+                    
+                    <!-- Renaissance Festival Schedule Table -->
+                    <div class="renaissance-schedule">
+                        <div class="schedule-header">
+                            <div class="schedule-title-with-swords">
+                                <img src="images/extra-images/swordscrossing.png" alt="Crossed swords decoration" class="schedule-sword left">
+                                <h3>2025 Renaissance Festival Schedule</h3>
+                                <img src="images/extra-images/swordscrossing.png" alt="Crossed swords decoration" class="schedule-sword right">
+                            </div>
+                            <div class="wooden-divider"></div>
+                        </div>
+                        
+                        <div class="schedule-table-container">
+                            <table class="schedule-table">
+                                <thead>
+                                    <tr>
+                                        <th>Festival</th>
+                                        <th>Dates</th>
+                                        <th>Location</th>
+                                        <th>Booth</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><a href="https://arizona.renfestinfo.com" target="_blank" rel="noopener noreferrer">Arizona Renaissance Festival</a></td>
+                                        <td>Feb. 1st - March 30th</td>
+                                        <td>Apache Junction, AZ</td>
+                                        <td>315</td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="https://www.srfestival.com/" target="_blank" rel="noopener noreferrer">Scarborough Renaissance Festival</a></td>
+                                        <td>Weekends April 5th - Memorial Day</td>
+                                        <td>Waxahachie, TX</td>
+                                        <td>260</td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="http://www.parenfaire.com/celtic.html" target="_blank" rel="noopener noreferrer">Celtic Fling and Highland Games</a></td>
+                                        <td>June 28th & 29th</td>
+                                        <td>Manheim, PA</td>
+                                        <td>424</td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="https://www.coloradorenaissance.com/" target="_blank" rel="noopener noreferrer">Colorado Renaissance Festival</a></td>
+                                        <td>Weekends June 14th - August 3rd</td>
+                                        <td>Larkspur, CO</td>
+                                        <td>133</td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="https://www.sterlingfestival.com" target="_blank" rel="noopener noreferrer">Sterling Renaissance Festival</a></td>
+                                        <td>Weekends July 5th - August 17th</td>
+                                        <td>Sterling, NY</td>
+                                        <td>—</td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="https://www.pennsicwar.org/" target="_blank" rel="noopener noreferrer">Pennsic War</a></td>
+                                        <td>July 25th - August 10th</td>
+                                        <td>Slippery Rock, PA</td>
+                                        <td>—</td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="https://www.renfair.com/ny/" target="_blank" rel="noopener noreferrer">N.Y. Renaissance Festival</a></td>
+                                        <td>Weekends August 16th - October 5th</td>
+                                        <td>Tuxedo, NY</td>
+                                        <td>33</td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="https://www.renaissancefest.com/" target="_blank" rel="noopener noreferrer">Minnesota Renaissance Festival</a></td>
+                                        <td>Weekends August 16th - September 28th</td>
+                                        <td>Shakopee, MN</td>
+                                        <td>630</td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="https://www.parenfaire.com/faire.html" target="_blank" rel="noopener noreferrer">Pennsylvania Renaissance Faire</a></td>
+                                        <td>Weekends August 16th - October 26th</td>
+                                        <td>Manheim, PA</td>
+                                        <td>424</td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="https://www.rennfest.com/" target="_blank" rel="noopener noreferrer">Maryland Renaissance Festival</a></td>
+                                        <td>Weekends August 23rd - October 19th</td>
+                                        <td>Crownsville, MD</td>
+                                        <td>112</td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="https://www.renfestival.com/" target="_blank" rel="noopener noreferrer">Ohio Renaissance Festival</a></td>
+                                        <td>Weekends August 30th - October 26th</td>
+                                        <td>Harveysburg, OH</td>
+                                        <td>2011A</td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="https://www.texrenfest.com/" target="_blank" rel="noopener noreferrer">Texas Renaissance Festival</a></td>
+                                        <td>Weekends October 11th - November 30th</td>
+                                        <td>Plantersville, TX</td>
+                                        <td>212</td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="https://www.larf2023.org" target="_blank" rel="noopener noreferrer">Louisiana Renaissance Festival</a></td>
+                                        <td>Weekends November 1st - December 7th</td>
+                                        <td>Hammond, LA</td>
+                                        <td>4259</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        <!-- Center the text visually using a div and CSS for best cross-browser results -->
+                        <div class="schedule-footer" style="display: flex; justify-content: center; margin-top: 1em;">
+                            <p style="text-align:center;">All dates are for 2025. Visit us at these fine gatherings!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Famous Footwear Tab -->
+            <div class="tab-content" id="famous">
+                <h2>Famous Footwear</h2>
+                <div class="content-container">
+                    <p>Over the years, our custom moccasins have been worn by notable figures on screen and stage.</p>
+                    
+                    <p><strong>Tommy Lee Jones and Benecio Del Toro in The Hunted (2003):</strong><br>
+                    Catskill Mountain Moccasins was first contacted by the assistant costume designer for The Hunted nearly two years before the film’s release. A meeting was quickly arranged in New York with costume designer Gloria Gresham to discuss the film’s visual direction and how our moccasins could contribute to the look. Impressed by our work, Gloria later invited us to join the production team in Portland, Oregon.
+<p>Despite a major East Coast snowstorm, we made it to Portland on time—expecting a short stay and a small order. What began as a couple pairs for Tommy Lee Jones and Benecio Del Toro, turned into a two-week collaboration and 23 custom pairs of moccasins, including one for director William Friedkin. Fittings were done on-site, with materials overnighted to our studio where Lynn crafted each pair with precision and speed. All footwear was delivered on time and with exceptional quality.
+<p>Working on the film was a deeply rewarding experience. We were inspired by the dedication of the cast and crew, and proud to see our craftsmanship featured on screen.</p>
+                    <div class="famous-gallery">
+                        <div class="gallery-item">
+                            <img src="images/famous/tommy.jpeg" alt="Tommy Lee Jones' Moccasins" class="gallery-img gallery-img-large">
+                            <div class="gallery-caption">Tommy Lee Jones' Moccasins</div>
+                        </div>
+                        <div class="gallery-item">
+                            <img src="images/famous/benecio-mocs.jpg" alt="Benecio Del Toro" class="gallery-img">
+                            <div class="gallery-caption">Benecio Del Toro</div>
+                        </div>
+                        <div class="gallery-item">
+                            <img src="images/famous/bill-friedken2.jpg" alt="Director, Bill Friedken" class="gallery-img gallery-img-large">
+                            <div class="gallery-caption">Director, Bill Friedken</div>
+                        </div>
+                    </div>
+                    
+                    <p><strong>Many Musician, Actors, and Performers:</strong><br>
+                    While we may not have all of the pictures and context for all of our interesting and amazing customers, we would love to share a list of all of the paths our moccasins have taken.</p>
+                    <ul class="famous-list">
+                        <li>Goldie Hawn and Kurt Russel; Actors</li>
+                        <li>John Denver; Musician</li>
+                        <li>Lenny Kravitz; Musician</li>
+                        <li>Cindy Blackman Santana; Drummer for Lenny Kravitz and Carlos Santana</li>
+                        <li>Matthew Glascoe; Drummer for Tartanic and Celtic Legacy</li>
+                        <li>Sara McLachlan; Musician</li>
+                        <li>Steven Tyler; Lead Singer for Aerosmith</li>
+                        <li>Tony Levin; Bassist for Peter Gabriel and King Crimson</li>
+                        <li>Will Calhoun; Drummer for Living Colour</li>
+                    </ul>
+                    
+                    <p>While we respect our customers' privacy, we're proud that our craftsmanship has been trusted by those who demand the very best.</p>
+                    
+                    <div class="famous-gallery" style="margin-top:2em; text-align:center;">
+                        <img 
+                            src="images/famous/celticlegacy.jpeg" 
+                            alt="Celtic Legacy" 
+                            style="
+                                display: block;
+                                margin: 0 auto;
+                                max-width: 680px; /* doubled from 340px */
+                                width: 100%;
+                                border-radius: 10px;
+                                box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+                            "
+                        >
+                        <div 
+                            class="gallery-caption" 
+                            style="
+                                margin-top: 0.5em;
+                                font-weight: bold;
+                            "
+                        >
+                            Catskill Mountain Moccasins: Official Footwear of Celtic Legacy
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Boot Height Chart and Images -->
+            <div class="tab-content" id="boot-height">
+                <h2>Boot Height Options</h2>
+                <div class="content-container">
+                    <!-- Boot Height Chart -->
+                    <h3>Boot Height Chart</h3>
+                    <table class="boot-height-chart">
+                        <thead>
+                            <tr>
+                                <th>Height (inches)</th>
+                                <th>Button Count</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>3 1/2"</td><td>1 button</td></tr>
+                            <tr><td>5"</td><td>2 button</td></tr>
+                            <tr><td>6 1/2"</td><td>3 button</td></tr>
+                            <tr><td>8"</td><td>4 button</td></tr>
+                            <tr><td>9 1/2"</td><td>5 button</td></tr>
+                            <tr><td>11"</td><td>6 button</td></tr>
+                            <tr><td>12 1/2"</td><td>7 button</td></tr>
+                            <tr><td>14"</td><td>8 button</td></tr>
+                            <tr><td>14 1/4 - 16 7/8"</td><td>9 button</td></tr>
+                            <tr><td>17 - 21"</td><td>10 button</td></tr>
+                        </tbody>
+                    </table>
+
+                    <!-- Boot Height Images Grid -->
+                    <h3>Boot Height Images</h3>
+                    <div class="boot-height-grid">
+                        <div class="grid-row">
+                            <img src="images/boots/boot1.jpeg" alt="Low Boot">
+                            <img src="images/boots/boot2.jpeg" alt="Mid Boot">
+                            <img src="images/boots/boot3.jpeg" alt="High Boot">
+                        </div>
+                        <div class="grid-row">
+                            <img src="images/boots/boot4.jpeg" alt="Knee Boot">
+                            <img src="images/boots/boot5.jpeg" alt="Tall Knee Boot">
+                            <img src="images/boots/boot6.jpeg" alt="Thigh Boot">
+                        </div>
+                        <div class="grid-row">
+                            <img src="images/boots/boot7.jpeg" alt="Extra Tall Thigh Boot">
+                            <img src="images/boots/boot8.jpeg" alt="Custom Boot">
+                            <img src="images/boots/boot9.jpeg" alt="Specialty Boot">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>  
+
+    <script src="scripts/main.js"></script>
+    <script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Tab navigation for About Us page
+  const tabButtons = document.querySelectorAll('.about-tabs .tab-button');
+  const tabContents = document.querySelectorAll('.tab-content');
+
+  function activateTab(tabId) {
+    tabButtons.forEach(b => b.classList.remove('active'));
+    tabContents.forEach(tc => tc.classList.remove('active'));
+    // Activate tab button if exists
+    const btn = document.querySelector('.about-tabs .tab-button[data-tab="' + tabId + '"]');
+    if (btn) btn.classList.add('active');
+    // Activate tab content
+    const tab = document.getElementById(tabId);
+    if (tab) tab.classList.add('active');
+  }
+
+  tabButtons.forEach(btn => {
+    btn.addEventListener('click', function() {
+      activateTab(btn.getAttribute('data-tab'));
+    });
+  });
+
+  // Popout menu tab links
+  const dropdownLinks = document.querySelectorAll('.dropdown-link[data-tab]');
+  dropdownLinks.forEach(link => {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      activateTab(link.getAttribute('data-tab'));
+      // Optionally close the popout menu here
+      document.getElementById('sideNav').classList.remove('open');
+      document.getElementById('navOverlay').style.display = 'none';
+    });
+  });
+});
+</script>
+</body>
+
+    <script src="scripts/main.js"></script>
+</body>
+</html>

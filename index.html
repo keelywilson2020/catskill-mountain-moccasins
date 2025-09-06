@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catskill Mountain Moccasins</title>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <h1>Catskill Mt. Leather Co.</h1>
+            <button class="menu-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Side Navigation Popout -->
+    <nav class="side-nav" id="sideNav">
+        <div class="side-nav-content">
+            <button class="close-btn" aria-label="Close navigation">&times;</button>
+            <div class="nav-logo">
+                <a href="index.html" class="nav-logo-link">
+                    <img src="images/logo.png" alt="Catskill Mt. Leather Co. Logo" class="nav-logo-img">
+                </a>
+            </div>
+            <ul class="side-nav-menu">
+                <li class="nav-dropdown">
+                    <a href="about.html" class="nav-link dropdown-toggle">About Us <span class="dropdown-arrow">▼</span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="about.html" class="dropdown-link" data-tab="history">Our History</a></li>
+                        <li><a href="about.html" class="dropdown-link" data-tab="mission">Our Mission</a></li>
+                        <li><a href="about.html" class="dropdown-link" data-tab="makers">Meet Your Makers</a></li>
+                        <li><a href="about.html" class="dropdown-link" data-tab="schedule">Show Schedule</a></li>
+                        <li><a href="about.html" class="dropdown-link" data-tab="famous">Famous Footwear</a></li>
+                    </ul>
+                </li>
+                <li class="nav-dropdown">
+                    <a href="custom-design.html" class="nav-link dropdown-toggle">Shop <span class="dropdown-arrow">▼</span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="custom-design.html" class="dropdown-link">Custom Design Options</a></li>
+                        <li><a href="price-quote.html" class="dropdown-link">Price Quote Submission Form</a></li>
+                        <li><a href="care-guide.html" class="dropdown-link">Wear & Care</a></li>
+                    </ul>
+                </li>
+                <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+                <li><a href="order-status.html" class="nav-link">Check My Order Status</a></li>
+                <li><a href="payment.html" class="nav-link">Make a Payment</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Overlay for side navigation -->
+    <div class="nav-overlay" id="navOverlay"></div>
+
+    <main>
+        <section id="home" class="hero">
+            <h2>Welcome to Catskill Mountain Moccasins</h2>
+            <p>Saving Soles since 1987</p>
+            <a href="#features" class="cta-button">Learn More</a>
+        </section>
+
+        <section id="features" class="features-section">
+            <div class="features-container">
+                <div class="features-row">
+                    <div class="feature-box">
+                        <h3>About Us</h3>
+                        <p>Discover the story behind Catskill Mt. Leather Co. and our commitment to quality craftsmanship.</p>
+                        <a href="about.html" class="feature-button">Learn More</a>
+                    </div>
+                    <div class="feature-box">
+                        <h3>Shop</h3>
+                        <p>Browse our collection of handcrafted leather goods and customize your perfect piece.</p>
+                        <a href="custom-design.html" class="feature-button">Shop Now</a>
+                    </div>
+                    <div class="feature-box">
+                        <h3>Gallery</h3>
+                        <p>Explore our beautiful collection of handcrafted leather goods and see the quality that sets us apart.</p>
+                        <a href="gallery.html" class="feature-button">View Gallery</a>
+                    </div>
+                </div>
+                <div class="features-row">
+                    <div class="feature-box">
+                        <h3>Check My Order Status</h3>
+                        <p>Track your order and get updates on your custom Catskill Mt. Leather Co. products.</p>
+                        <a href="order-status.html" class="feature-button">Track Order</a>
+                    </div>
+                    <div class="feature-box">
+                        <h3>Make a Payment</h3>
+                        <p>Secure and simple payment for your Catskill Mt. Leather Co. order with our trusted payment system.</p>
+                        <a href="payment.html" class="feature-button">Pay Now</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
+        <div class="content-container">
+            <h2>What Our Customers Say</h2>
+            <div class="testimonials-carousel">
+                <div class="testimonial active" data-testimonial="1">
+                    <div class="testimonial-content">
+                        <blockquote>
+                            "Thank you so much for my boots—I absolutely love them! I wear them everywhere, and people always comment on them. I really appreciated being kept informed throughout the process. Off to enjoy more 'footgasms'!"
+                        </blockquote>
+                        <cite>— Mary</cite>
+                    </div>
+                </div>
+                <div class="testimonial" data-testimonial="2">
+                    <div class="testimonial-content">
+                        <blockquote>
+                            "I LOVE MY MOCCASINS!"
+                        </blockquote>
+                        <cite>— Lynn</cite>
+                    </div>
+                </div>
+                <div class="testimonial" data-testimonial="3">
+                    <div class="testimonial-content">
+                        <blockquote>
+                            "Mark, they arrived today—and they're beautiful! Please thank Diane; she did a wonderful job. I really appreciate your attention in getting them to me. I'll enjoy them very much."
+                        </blockquote>
+                        <cite>— Julie</cite>
+                    </div>
+                </div>
+                <div class="testimonial" data-testimonial="4">
+                    <div class="testimonial-content">
+                        <blockquote>
+                            "Yes, the moccasins are great—Lynn did a wonderful job!"
+                        </blockquote>
+                        <cite>— Laurie</cite>
+                    </div>
+                </div>
+                <div class="testimonial" data-testimonial="5">
+                    <div class="testimonial-content">
+                        <blockquote>
+                            "Just returned from Shakopee and had to say—I've never worn anything as instantly comfortable. I'll be budgeting for a pair next year. Your shop was the most welcoming, and the kind woman working there knew exactly what I needed. She made the whole experience memorable."
+                        </blockquote>
+                        <cite>— Hamlin</cite>
+                    </div>
+                </div>
+                <div class="testimonial" data-testimonial="6">
+                    <div class="testimonial-content">
+                        <blockquote>
+                            "Mark, I received the remade moccasin today—just one needed fixing, and it's perfect. Matches the other boot great. Thank you for making sure I was satisfied. Please let the maker know he did a great job—and I'm looking forward to the next pair I have on order!"
+                        </blockquote>
+                        <cite>— Russell</cite>
+                    </div>
+                </div>
+                <div class="testimonial" data-testimonial="7">
+                    <div class="testimonial-content">
+                        <blockquote>
+                            "I love these boots and wear them all the time. This is my second pair—only my first pair compares in comfort!"
+                        </blockquote>
+                        <cite>— Mary Beth</cite>
+                    </div>
+                </div>
+                <div class="testimonial" data-testimonial="8">
+                    <div class="testimonial-content">
+                        <blockquote>
+                            "Even though my shoes had the wrong sole, they were still the most comfortable I've ever owned. I can't wait for Tony to get his. Other brands don't compare—people brag about cheaper pairs, but the quality doesn't last. I saved up two years for mine and never regretted it. Worth every penny!"
+                        </blockquote>
+                        <cite>— Meagan</cite>
+                    </div>
+                </div>
+                <div class="testimonial" data-testimonial="9">
+                    <div class="testimonial-content">
+                        <blockquote>
+                            "To the whole team—thank you for your precision, passion, and craftsmanship. These moccasins blend old-world spirit with modern comfort. I'll wear them with pride. Thanks also to your amazing staff at the Carolina Renaissance Festival—so professional and kind. Looking forward to buying again soon!"
+                        </blockquote>
+                        <cite>— Johnny McGaugh</cite>
+                    </div>
+                </div>
+                <div class="testimonial" data-testimonial="10">
+                    <div class="testimonial-content">
+                        <blockquote>
+                            "Just wanted to say—after a week of wearing my moccasins every day, I'm blown away. They're beautiful, well-made, and fit like a glove. Best footwear I've ever purchased. Thank you!"
+                        </blockquote>
+                        <cite>— VL Martin Jr.</cite>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-indicators">
+                <button class="indicator active" data-slide="1" aria-label="View testimonial 1"></button>
+                <button class="indicator" data-slide="2" aria-label="View testimonial 2"></button>
+                <button class="indicator" data-slide="3" aria-label="View testimonial 3"></button>
+                <button class="indicator" data-slide="4" aria-label="View testimonial 4"></button>
+                <button class="indicator" data-slide="5" aria-label="View testimonial 5"></button>
+                <button class="indicator" data-slide="6" aria-label="View testimonial 6"></button>
+                <button class="indicator" data-slide="7" aria-label="View testimonial 7"></button>
+                <button class="indicator" data-slide="8" aria-label="View testimonial 8"></button>
+                <button class="indicator" data-slide="9" aria-label="View testimonial 9"></button>
+                <button class="indicator" data-slide="10" aria-label="View testimonial 10"></button>
+            </div>
+        </div>
+    </section>
+
+
+    <script src="scripts/main.js"></script>
+</body>
+</html>

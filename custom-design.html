@@ -1,0 +1,1018 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Design Options - Catskill Mt. Leather Co.</title>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <h1><a href="index.html" style="text-decoration: none; color: inherit;">Catskill Mt. Leather Co.</a></h1>
+            <button class="menu-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Side Navigation Popout -->
+    <nav class="side-nav" id="sideNav">
+        <div class="side-nav-content">
+            <button class="close-btn" aria-label="Close navigation">&times;</button>
+            <div class="nav-logo">
+                <a href="index.html" class="nav-logo-link">
+                    <img src="images/logo.png" alt="Catskill Mt. Leather Co. Logo" class="nav-logo-img">
+                </a>
+            </div>
+            <ul class="side-nav-menu">
+                <li class="nav-dropdown">
+                    <a href="about.html" class="nav-link dropdown-toggle">About Us <span class="dropdown-arrow">▼</span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="about.html" class="dropdown-link" data-tab="history">Our History</a></li>
+                        <li><a href="about.html" class="dropdown-link" data-tab="mission">Our Mission</a></li>
+                        <li><a href="about.html" class="dropdown-link" data-tab="makers">Meet Your Makers</a></li>
+                        <li><a href="about.html" class="dropdown-link" data-tab="schedule">Show Schedule</a></li>
+                        <li><a href="about.html" class="dropdown-link" data-tab="famous">Famous Footwear</a></li>
+                    </ul>
+                </li>
+                <li class="nav-dropdown">
+                    <a href="custom-design.html" class="nav-link dropdown-toggle">Shop <span class="dropdown-arrow">▼</span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="custom-design.html" class="dropdown-link">Custom Design Options</a></li>
+                        <li><a href="price-quote.html" class="dropdown-link">Price Quote Submission Form</a></li>
+                        <li><a href="care-guide.html" class="dropdown-link">Getting to Know Your Catskills</a></li>
+                    </ul>
+                </li>
+                <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+                <li><a href="order-status.html" class="nav-link">Check My Order Status</a></li>
+                <li><a href="payment.html" class="nav-link">Make a Payment</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Overlay for side navigation -->
+    <div class="nav-overlay" id="navOverlay"></div>
+
+    <main>
+        <!-- Shop Tab Navigation -->
+        <section class="about-tabs-section">
+            <div class="content-container">
+                <nav class="about-tabs">
+                    <button class="tab-button active" onclick="window.location.href='custom-design.html'">Custom Design Options</button>
+                    <button class="tab-button" onclick="window.location.href='price-quote.html'">Price Quote Submission Form</button>
+                    <button class="tab-button" onclick="window.location.href='care-guide.html'">Wear & Care</button>
+                </nav>
+            </div>
+        </section>
+
+        <section class="page-content">
+            <!-- Custom Design Cover Page -->
+            <div class="custom-design-cover" id="designCover">
+                <div class="cover-hero">
+                    <div class="hero-images">
+                        <div class="hero-image hero-image-1"></div>
+                        <div class="hero-image hero-image-2"></div>
+                        <div class="hero-image hero-image-3"></div>
+                    </div>
+                    <div class="hero-overlay"></div>
+                    <div class="hero-content">
+                        <h1>Custom Design Options</h1>
+                        <p class="hero-description">Create your perfect pair of moccasins with our comprehensive custom design options. Every pair is handcrafted to your exact specifications using traditional techniques and premium materials.</p>
+                    </div>
+                </div>
+
+                <div class="cover-content">
+                    <!-- Custom Options Navigation -->
+                    <div class="cover-nav-section">
+                        <h3 style="font-size: 2em;">Explore All Custom Options</h3>
+                        <div class="custom-options-nav">
+                            <button class="option-nav-btn" data-section="boot-height" onclick="showCustomOptions('boot-height')">Boot Height</button>
+                            <button class="option-nav-btn" data-section="leathers" onclick="showCustomOptions('leathers')">Leathers</button>
+                            <button class="option-nav-btn" data-section="trim-styles" onclick="showCustomOptions('trim-styles')">Trim Styles</button>
+                            <button class="option-nav-btn" data-section="tabs" onclick="showCustomOptions('tabs')">Tabs</button>
+                            <button class="option-nav-btn" data-section="heels" onclick="showCustomOptions('heels')">Heels</button>
+                            <button class="option-nav-btn" data-section="buttons" onclick="showCustomOptions('buttons')">Buttons</button>
+                            <button class="option-nav-btn" data-section="edge-finishing" onclick="showCustomOptions('edge-finishing')">Edge Finishing</button>
+                            <button class="option-nav-btn" data-section="soles" onclick="showCustomOptions('soles')">Soles</button>
+                        </div>
+                    </div>
+
+                    <!-- Moccasin Anatomy Reference -->
+                    <div class="cover-section">
+                        <h3>Understanding Your Moccasins</h3>
+                        <div class="anatomy-reference">
+                            <img src="images/extra-images/anatomy.jpg" alt="Moccasin Anatomy Diagram" class="anatomy-img">
+                            <p class="anatomy-caption">Reference this diagram to understand all the vocabulary and parts of the moccasins available for customization. Each component can be personalized to create your perfect pair.</p>
+                        </div>
+                    </div>
+
+                    <!-- Natural vs Finished Explanation -->
+                    <div class="cover-section">
+                        <h3>Style Options</h3>
+                        <div class="design-explanation">
+                            <div class="explanation-item">
+                                <h4>Natural Moccasins</h4>
+                                <p>These moccasins utilize a rougher, more ragged-edged leather for the tabs and layering on the uppers, creating a more "natural", woodsy or Road Warrior look.</p>
+                                <div class="philosophy-image">
+                                    <img src="images/extra-images/natural.jpeg" alt="Natural Road Warrior style moccasins with ragged leather edges" class="philosophy-img" style="width: 300px; height: auto;">
+                                </div>
+                            </div>
+                            <div class="explanation-item">
+                                <h4>Finished Moccasins</h4>
+                                <p>These moccasins feature clean, refined edges with smooth finishing for a more polished, contemporary look. This can also refer to shoes with design elements like welting, bead-work and layering of various trims and tabs.</p>
+                                <div class="philosophy-image">
+                                    <img src="images/gallery/gallery57.jpeg" alt="Finished moccasins with clean edges and refined details" class="philosophy-img" style="width: 360px; height: auto;">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pricing Information -->
+                    <div class="cover-section">
+                        <h3>Custom Pricing</h3>
+                        <div class="pricing-intro">
+                            <p>Our basic custom made moccasin is made out of standard bullhide with straight trim, straight tabs and a straight heel. Additional charges are added to the basic price according to a number of features:</p>
+                        </div>
+                        <div class="pricing-factors-grid">
+                            <div class="pricing-factor">
+                                <div class="factor-icon">📏</div>
+                                <h4>Height</h4>
+                                <p>Number of buttons determines the boot height and complexity</p>
+                            </div>
+                            <div class="pricing-factor">
+                                <div class="factor-icon">✂️</div>
+                                <h4>Style</h4>
+                                <p>Trim work and top treatment add artisan craftsmanship</p>
+                            </div>
+                            <div class="pricing-factor">
+                                <div class="factor-icon">🔘</div>
+                                <h4>Button Selection</h4>
+                                <p>Premium materials like silver, antler, or handstamped designs</p>
+                            </div>
+                            <div class="pricing-factor">
+                                <div class="factor-icon">👟</div>
+                                <h4>Sole Choice</h4>
+                                <p>Vibram Newflex or conveyor belt materials</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Durability & Quality Promise -->
+                    <div class="cover-section">
+                        <h3>Quality & Durability</h3>
+                        <div class="quality-promise">
+                            <div class="promise-icon">
+                                <img src="images/extra-images/shield.png" alt="Durability Shield" class="shield-icon">
+                            </div>
+                            <div class="promise-text">
+                                <h4>20-Year Durability Promise</h4>
+                                <p>With proper care, you can expect <strong>20 years of wear</strong> from the leather uppers. Both leather types are superior footwear leathers chosen for their exceptional longevity.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Custom Options Content (Initially Hidden) -->
+            <div class="custom-options-main" id="customOptionsMain" style="display: none;">
+            <h2>Custom Design Options</h2>
+            <div class="content-container">
+                <!-- Navigation Menu for Custom Options -->
+                <div class="custom-options-nav">
+                    <button class="option-nav-btn active" data-section="boot-height">Boot Height</button>
+                    <button class="option-nav-btn" data-section="leathers">Leathers</button>
+                    <button class="option-nav-btn" data-section="trim-styles">Trim Styles</button>
+                    <button class="option-nav-btn" data-section="tabs">Tabs</button>
+                    <button class="option-nav-btn" data-section="heels">Heels</button>
+                    <button class="option-nav-btn" data-section="buttons">Buttons</button>
+                    <button class="option-nav-btn" data-section="edge-finishing">Edge Finishing</button>
+                    <button class="option-nav-btn" data-section="soles">Soles</button>
+                </div>
+
+                <!-- Boot Height Section -->
+                <div class="custom-option-section active" id="boot-height">
+                    <h3>Boot Height Options</h3>
+                    <div class="option-content">
+                        </div>                        <!-- Add this just before or after your .boot-height-chart div inside #boot-height section -->
+                                                                <div style="display: flex; gap: 2em; align-items: flex-start; margin-bottom: 2em;">
+                                    <!-- Boot Height Chart (left side) -->
+                                    <div class="boot-height-chart" style="background: #f8f6f2; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.07); border: 1px solid #e2d7c3; padding: 1.5em 2em; max-width: 340px;">
+                                        <h3 style="margin-top:0; margin-bottom:1em; text-align:center;">Boot Height Chart</h3>
+                                        <table style="width:100%; border-collapse:collapse; font-size:1.08em;">
+                                            <thead>
+                                                <tr style="background:#e2d7c3;">
+                                                    <th style="padding:0.5em 0.7em; text-align:center; border-bottom: 2px solid #c7a97b;">Height (inches)</th>
+                                                    <th style="padding:0.5em 0.7em; text-align:center; border-bottom: 2px solid #c7a97b;">Number of Buttons</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr><td style="border-bottom: 1px solid #e2d7c3; text-align:center;">3½"</td><td style="border-bottom: 1px solid #e2d7c3; text-align:center;">1 button</td></tr>
+                                                <tr><td style="border-bottom: 1px solid #e2d7c3; text-align:center;">5"</td><td style="border-bottom: 1px solid #e2d7c3; text-align:center;">2 button</td></tr>
+                                                <tr><td style="border-bottom: 1px solid #e2d7c3; text-align:center;">6½"</td><td style="border-bottom: 1px solid #e2d7c3; text-align:center;">3 button</td></tr>
+                                                <tr><td style="border-bottom: 1px solid #e2d7c3; text-align:center;">8"</td><td style="border-bottom: 1px solid #e2d7c3; text-align:center;">4 button</td></tr>
+                                                <tr><td style="border-bottom: 1px solid #e2d7c3; text-align:center;">9½"</td><td style="border-bottom: 1px solid #e2d7c3; text-align:center;">5 button</td></tr>
+                                                <tr><td style="border-bottom: 1px solid #e2d7c3; text-align:center;">11"</td><td style="border-bottom: 1px solid #e2d7c3; text-align:center;">6 button</td></tr>
+                                                <tr><td style="border-bottom: 1px solid #e2d7c3; text-align:center;">12½"</td><td style="border-bottom: 1px solid #e2d7c3; text-align:center;">7 button</td></tr>
+                                                <tr><td style="border-bottom: 1px solid #e2d7c3; text-align:center;">14"</td><td style="border-bottom: 1px solid #e2d7c3; text-align:center;">8 button</td></tr>
+                                                <tr><td style="border-bottom: 1px solid #e2d7c3; text-align:center;">14¼" – 16⅞"</td><td style="border-bottom: 1px solid #e2d7c3; text-align:center;">9 button</td></tr>
+                                                <tr><td style="text-align:center;">17" – 21"</td><td style="text-align:center;">10 button</td></tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                
+                                    <!-- Photo Grid (right side) -->
+                                    <div style="flex: 1;">
+                                        <!-- 2x2 grid for first 4 photos -->
+                                        <div style="display: grid; grid-template-columns: repeat(2, 1fr); grid-template-rows: repeat(2, 1fr); gap: 1em; margin-bottom: 1.5em;">
+                                            <div class="boot-photo-slot" style="background: #f8f6f2; border-radius: 8px; min-height: 180px; border: 1px solid #e2d7c3; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                                                <img src="images/gallery/gallery490.jpeg" alt="1 button - 3½ inch boot" style="width:90%;max-width:220px;aspect-ratio:1/1;object-fit:cover;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.10);margin-bottom:0.5em;">
+                                                <span style="font-weight:bold;">1 button</span>
+                                                <span style="font-size:0.98em;">3½"</span>
+                                            </div>
+                                            <div class="boot-photo-slot" style="background: #f8f6f2; border-radius: 8px; min-height: 180px; border: 1px solid #e2d7c3; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                                                <img src="images/gallery/gallery381.jpeg" alt="2 button - 5 inch boot" style="width:90%;max-width:220px;aspect-ratio:1/1;object-fit:cover;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.10);margin-bottom:0.5em;">
+                                                <span style="font-weight:bold;">2 button</span>
+                                                <span style="font-size:0.98em;">5"</span>
+                                            </div>
+                                            <div class="boot-photo-slot" style="background: #f8f6f2; border-radius: 8px; min-height: 180px; border: 1px solid #e2d7c3; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                                                <img src="images/gallery/gallery315.jpeg" alt="3 button - 6½ inch boot" style="width:90%;max-width:220px;aspect-ratio:1/1;object-fit:cover;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.10);margin-bottom:0.5em;">
+                                                <span style="font-weight:bold;">3 button</span>
+                                                <span style="font-size:0.98em;">6½"</span>
+                                            </div>
+                                            <div class="boot-photo-slot" style="background: #f8f6f2; border-radius: 8px; min-height: 180px; border: 1px solid #e2d7c3; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                                                <img src="images/gallery/gallery582.jpeg" alt="4 button - 8 inch boot" style="width:90%;max-width:220px;aspect-ratio:1/1;object-fit:cover;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.10);margin-bottom:0.5em;">
+                                                <span style="font-weight:bold;">4 button</span>
+                                                <span style="font-size:0.98em;">8"</span>
+                                            </div>
+                                        </div>
+                                                                           <!-- In the Boot Height Section, update the last 6 .boot-photo-slot containers to match the first 4 in size and style -->
+                                    <!-- Find this block in your file: -->
+                                    <div style="display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: repeat(2, 1fr); gap: 1em;">
+                                        <div class="boot-photo-slot" style="background: #f8f6f2; border-radius: 8px; min-height: 180px; border: 1px solid #e2d7c3; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                                            <img src="images/gallery/gallery542.jpeg" alt="5 button - 9½ inch boot" style="width:90%;max-width:220px;aspect-ratio:1/1;object-fit:cover;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.10);margin-bottom:0.5em;">
+                                            <span style="font-weight:bold;">5 button</span>
+                                            <span style="font-size:0.98em;">9½"</span>
+                                        </div>
+                                        <div class="boot-photo-slot" style="background: #f8f6f2; border-radius: 8px; min-height: 180px; border: 1px solid #e2d7c3; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                                            <img src="images/gallery/gallery598.jpeg" alt="6 button - 11 inch boot" style="width:90%;max-width:220px;aspect-ratio:1/1;object-fit:cover;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.10);margin-bottom:0.5em;">
+                                            <span style="font-weight:bold;">6 button</span>
+                                            <span style="font-size:0.98em;">11"</span>
+                                        </div>
+                                        <div class="boot-photo-slot" style="background: #f8f6f2; border-radius: 8px; min-height: 180px; border: 1px solid #e2d7c3; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                                            <img src="images/gallery/7button.jpeg" alt="7 button - 12½ inch boot" style="width:90%;max-width:220px;aspect-ratio:1/1;object-fit:cover;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.10);margin-bottom:0.5em;">
+                                            <span style="font-weight:bold;">7 button</span>
+                                            <span style="font-size:0.98em;">12½"</span>
+                                        </div>
+                                        <div class="boot-photo-slot" style="background: #f8f6f2; border-radius: 8px; min-height: 180px; border: 1px solid #e2d7c3; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                                            <img src="images/gallery/gallery632.jpeg" alt="8 button - 14 inch boot" style="width:90%;max-width:220px;aspect-ratio:1/1;object-fit:cover;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.10);margin-bottom:0.5em;">
+                                            <span style="font-weight:bold;">8 button</span>
+                                            <span style="font-size:0.98em;">14"</span>
+                                        </div>
+                                        <div class="boot-photo-slot" style="background: #f8f6f2; border-radius: 8px; min-height: 180px; border: 1px solid #e2d7c3; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                                            <img src="images/gallery/gallery445.jpeg" alt="9 button - 14¼–16⅞ inch boot" style="width:90%;max-width:220px;aspect-ratio:1/1;object-fit:cover;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.10);margin-bottom:0.5em;">
+                                            <span style="font-weight:bold;">9 button</span>
+                                            <span style="font-size:0.98em;">14¼" – 16⅞"</span>
+                                        </div>
+                                        <div class="boot-photo-slot" style="background: #f8f6f2; border-radius: 8px; min-height: 180px; border: 1px solid #e2d7c3; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                                            <img src="images/gallery/gallery756.jpeg" alt="10 button - 17–21 inch boot" style="width:90%;max-width:220px;aspect-ratio:1/1;object-fit:cover;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.10);margin-bottom:0.5em;">
+                                            <span style="font-weight:bold;">10 button</span>
+                                            <span style="font-size:0.98em;">17" – 21"</span>
+                                        </div>
+                                    </div>
+                                    </div>
+                                </div>
+                </div>
+                           <!-- Trim Styles Section: Make all photo spaces medium sized -->
+            <div class="custom-option-section" id="trim-styles">
+                <h3>Trim Styles</h3>
+                <div class="option-content">
+                    <div class="trim-description">
+                        <p>Whatever style of moccasin you choose, you may opt for one or more layers of leather called "underlays". Also available are Catskill Mountain Moccasins' "Signature designs." These designs are the unique creations of our artisans and include, but are not limited to, beadwork, stone inlays, leather carvings, elaborate imagery and exotic materials such as snakeskin, alligator hide, lizard or ostrich. Of course, you may want to design your own trim, in which case, we are here and ready to help you.</p>
+                    </div>
+                    <div class="option-details">
+                        <div class="trim-option">
+                            <h4>Finished</h4>
+                            <div class="option-photo-medium" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1em; justify-items: center;">
+                                <img src="images/trim-styles/finished-trim-1.jpg" alt="Red Finished Trim with Green" class="medium-photo" style="max-width: 170px; width: 100%; height: auto; border-radius: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.10);">
+                                <img src="images/trim-styles/finished-trim-2.jpg" alt="Black Finished Trim with Green and White" class="medium-photo" style="max-width: 170px; width: 100%; height: auto; border-radius: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.10);">
+                                <img src="images/trim-styles/finished-trim-3.jpg" alt="Tall Black Finished Trim with Red" class="medium-photo" style="max-width: 170px; width: 100%; height: auto; border-radius: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.10);">
+                                <img src="images/trim-styles/finished-trim-4.jpg" alt="Black Finished Trim with Blue" class="medium-photo" style="max-width: 170px; width: 100%; height: auto; border-radius: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.10);">
+                            </div>
+                        </div>
+                        <div class="trim-option">
+                            <h4>Natural</h4>
+                            <div class="option-photo-medium" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1em; justify-items: center;">
+                                <img src="images/trim-styles/natural-trim-1.jpg" alt="Natural Trim Example 1" class="medium-photo" style="max-width: 170px; width: 100%; height: auto; border-radius: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.10);">
+                                <img src="images/trim-styles/natural-trim-2.jpg" alt="Natural Trim Example 2" class="medium-photo" style="max-width: 170px; width: 100%; height: auto; border-radius: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.10);">
+                                <img src="images/trim-styles/natural-trim-3.jpg" alt="Natural Trim Example 3" class="medium-photo" style="max-width: 170px; width: 100%; height: auto; border-radius: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.10);">
+                                <img src="images/trim-styles/natural-trim-4.jpg" alt="Natural Trim Example 4" class="medium-photo" style="max-width: 170px; width: 100%; height: auto; border-radius: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.10);">
+                            </div>
+                        </div>
+                        <div class="trim-option">
+                            <h4>Carved</h4>
+                             <div class="option-photo-medium" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1em; justify-items: center;">
+                                <img src="images/trim-styles/carved-trim-1.jpg" alt="Carved Trim Example 1" class="medium-photo" style="max-width: 170px; width: 100%; height: auto; border-radius: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.10);">
+                                <img src="images/trim-styles/carved-trim-2.jpg" alt="Carved Trim Example 2" class="medium-photo" style="max-width: 170px; width: 100%; height: auto; border-radius: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.10);">
+                                <img src="images/trim-styles/carved-trim-3.jpg" alt="Carved Trim Example 3" class="medium-photo" style="max-width: 170px; width: 100%; height: auto; border-radius: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.10);">
+                                <img src="images/trim-styles/carved-trim-4.jpg" alt="Carved Trim Example 4" class="medium-photo" style="max-width: 170px; width: 100%; height: auto; border-radius: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.10);">
+                            </div>
+                        </div>
+                        <div class="trim-option">
+                            <h4>Other Unique Options</h4>
+                           <div class="option-photo-medium" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1em; justify-items: center;">
+                                <img src="images/trim-styles/unique-trim-1.jpg" alt="Unique Trim Example 1" class="medium-photo" style="max-width: 170px; width: 100%; height: auto; border-radius: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.10);">
+                                <img src="images/trim-styles/unique-trim-2.jpg" alt="Unique Trim Example 2" class="medium-photo" style="max-width: 170px; width: 100%; height: auto; border-radius: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.10);">
+                                <img src="images/trim-styles/unique-trim-3.jpg" alt="Unique Trim Example 3" class="medium-photo" style="max-width: 170px; width: 100%; height: auto; border-radius: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.10);">
+                                <img src="images/trim-styles/unique-trim-4.jpg" alt="Unique Trim Example 4" class="medium-photo" style="max-width: 170px; width: 100%; height: auto; border-radius: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.10);">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Leathers Section -->
+                <div class="custom-option-section" id="leathers">
+                    <h3>Premium Leather Options</h3>
+                    <div class="leather-overview">
+                        <div class="overview-content">
+                            <h4>About Our Leathers</h4>
+                        <p>Moccasins can be made out of either <strong>American buffalo</strong> (bison) or <strong>bull hides</strong>- both are superior footwear leathers that will provide exceptional durability and comfort.</p>
+                        <p><strong>Note:</strong> All carvings/toolings—trims, tabs, medallions, or heel appliques—are made out of veg-tanned leather.</p>
+                            
+                            <div class="leather-comparison">
+                                <div class="comparison-item">
+                                    <div class="comparison-image">
+                                        <img src="images/leather-colors/bullhide.jpg" alt="Bullhide Leather Sample" class="leather-sample-img">
+                                    </div>
+                                    <h5>Bullhide</h5>
+                                    <p>Smoother texture with a tighter grain pattern for a refined look.</p>
+                                </div>
+                                <div class="comparison-item">
+                                    <div class="comparison-image">
+                                        <img src="images/leather-colors/buffhide.jpg" alt="Buffalo Hide Leather Sample" class="leather-sample-img">
+                                    </div>
+                                    <h5>Buffalo (Bison)</h5>
+                                    <p>Deeper grain pattern with a more rugged appearance.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="option-content">
+                        <div class="option-details">
+                            <div class="leather-option">
+                                <h4>Bison (8-9 oz)</h4>
+                                
+                                <p>Thick, durable leather with distinctive grain pattern</p>
+                                <div class="leather-uses">
+                                    <strong>Used for:</strong>
+                                    <ul class="use-list">
+                                        <li>Main body of the moccasin</li>
+                                        <li>Natural trims</li>
+                                        <li>Natural tabs</li>
+                                        <li>Straight or natural top flaps</li>
+                                    </ul>
+                                </div>
+                                <div class="color-options">
+                                    <h5>Available Colors</h5>
+                                    <div class="color-grid">
+                                        <div class="color-option" onclick="enlargeImage('images/leather-colors/bison/bison-black.jpeg', 'Black Bison Leather')">
+                                            <img src="images/leather-colors/bison/bison-black.jpeg" alt="Black Bison" class="color-sample">
+                                            <span class="color-name">Black</span>
+                                        </div>
+                                        <div class="color-option" onclick="enlargeImage('images/leather-colors/bison/bison-chocolate.jpeg', 'Chocolate Bison Leather')">
+                                            <img src="images/leather-colors/bison/bison-chocolate.jpeg" alt="Chocolate Bison" class="color-sample">
+                                            <span class="color-name">Chocolate</span>
+                                        </div>
+                                        <div class="color-option" onclick="enlargeImage('images/leather-colors/bison/bison-redwood.jpeg', 'Redwood Bison Leather')">
+                                            <img src="images/leather-colors/bison/bison-redwood.jpeg" alt="Redwood Bison" class="color-sample">
+                                            <span class="color-name">Redwood</span>
+                                        </div>
+                                        <div class="color-option" onclick="enlargeImage('images/leather-colors/bison/bison-tobacco.jpeg', 'Tobacco Bison Leather')">
+                                            <img src="images/leather-colors/bison/bison-tobacco.jpeg" alt="Tobacco Bison" class="color-sample">
+                                            <span class="color-name">Tobacco</span>
+                                        </div>
+                                        <div class="color-option" onclick="enlargeImage('images/leather-colors/bison/bison-saddle.jpeg', 'Saddle Bison Leather')">
+                                            <img src="images/leather-colors/bison/bison-saddle.jpeg" alt="Saddle Bison" class="color-sample">
+                                            <span class="color-name">Saddle</span>
+                                        </div>
+                                        <div class="color-option" onclick="enlargeImage('images/leather-colors/bison/bison-sand.jpeg', 'Sand Bison Leather')">
+                                            <img src="images/leather-colors/bison/bison-sand.jpeg" alt="Sand Bison" class="color-sample">
+                                            <span class="color-name">Sand</span>
+                                        </div>
+                                        <div class="color-option" onclick="enlargeImage('images/leather-colors/bison/bison-palomino.jpeg', 'Palomino Bison Leather')">
+                                            <img src="images/leather-colors/bison/bison-palomino.jpeg" alt="Palomino Bison" class="color-sample">
+                                            <span class="color-name">Palomino</span>
+                                        </div>
+                                    </div>
+                                <div class="leather-main-image"></div>
+                            </div>
+                            <div class="leather-option">
+                                <h4>Bull (6-8 oz)</h4> 
+                                
+                                <p>Strong, versatile leather perfect for everyday wear</p>
+                                <div class="leather-uses">
+                                    <strong>Used for:</strong>
+                                    <ul class="use-list">
+                                        <li>Main body of the moccasin</li>
+                                        <li>Trims</li>
+                                        <li>Tabs</li>
+                                        <li>Heel pieces</li>
+                                        <li>Top flaps</li>
+                                        <li>Standard laces</li>
+                                    </ul>
+                                </div>
+                                <div class="leather-restriction">
+                                    <strong>Note:</strong> Bull hide cannot be used for anything "natural" - the edges are not ragged enough to achieve the desired effect.
+                                </div>
+                                <div class="color-options">
+                                    <h5>Available Colors</h5>
+                                    <div class="color-grid">
+                                        <div class="color-option" onclick="enlargeImage('images/leather-colors/bull/bullhide-black.jpeg', 'Black Bull Leather')">
+                                            <img src="images/leather-colors/bull/bullhide-black.jpeg" alt="Black Bull" class="color-sample">
+                                            <span class="color-name">Black</span>
+                                        </div>
+                                        <div class="color-option" onclick="enlargeImage('images/leather-colors/bull/bullhide-chocolate.jpeg', 'Chocolate Bull Leather')">
+                                            <img src="images/leather-colors/bull/bullhide-chocolate.jpeg" alt="Chocolate Bull" class="color-sample">
+                                            <span class="color-name">Chocolate</span>
+                                        </div>
+                                        <div class="color-option" onclick="enlargeImage('images/leather-colors/bull/bullhide-redwood.jpeg', 'Redwood Bull Leather')">
+                                            <img src="images/leather-colors/bull/bullhide-redwood.jpeg" alt="Redwood Bull" class="color-sample">
+                                            <span class="color-name">Redwood</span>
+                                        </div>
+                                        <div class="color-option" onclick="enlargeImage('images/leather-colors/bull/bullhide-tobacco.jpeg', 'Tobacco Bull Leather')">
+                                            <img src="images/leather-colors/bull/bullhide-tobacco.jpeg" alt="Tobacco Bull" class="color-sample">
+                                            <span class="color-name">Tobacco</span>
+                                        </div>
+                                        <div class="color-option" onclick="enlargeImage('images/leather-colors/bull/bullhide-navy.jpeg', 'Navy Bull Leather')">
+                                            <img src="images/leather-colors/bull/bullhide-navy.jpeg" alt="Navy Bull" class="color-sample">
+                                            <span class="color-name">Navy</span>
+                                        </div>
+                                        <div class="color-option" onclick="enlargeImage('images/leather-colors/bull/bullhide-turquoise.jpeg', 'Turquoise Bull Leather')">
+                                            <img src="images/leather-colors/bull/bullhide-turquoise.jpeg" alt="Turquoise Bull" class="color-sample">
+                                            <span class="color-name">Turquoise</span>
+                                        </div>
+                                        <div class="color-option" onclick="enlargeImage('images/leather-colors/bull/bullhide-teal.jpeg', 'Teal Bull Leather')">
+                                            <img src="images/leather-colors/bull/bullhide-teal.jpeg" alt="Teal Bull" class="color-sample">
+                                            <span class="color-name">Teal</span>
+                                        </div>
+                                        <div class="color-option" onclick="enlargeImage('images/leather-colors/bull/bullhide-purple.jpeg', 'Purple Bull Leather')">
+                                            <img src="images/leather-colors/bull/bullhide-purple.jpeg" alt="Purple Bull" class="color-sample">
+                                            <span class="color-name">Purple</span>
+                                        </div>
+                                        <div class="color-option" onclick="enlargeImage('images/leather-colors/bull/bullhide-red.jpeg', 'Red Bull Leather')">
+                                            <img src="images/leather-colors/bull/bullhide-red.jpeg" alt="Red Bull" class="color-sample">
+                                            <span class="color-name">Red</span>
+                                        </div>
+                                        <div class="color-option" onclick="enlargeImage('images/leather-colors/bull/bullhide-hotpink.jpeg', 'Hot Pink Bull Leather')">
+                                            <img src="images/leather-colors/bull/bullhide-hotpink.jpeg" alt="Hot Pink Bull" class="color-sample">
+                                            <span class="color-name">Hot Pink</span>
+                                        </div>
+                                        <div class="color-option" onclick="enlargeImage('images/leather-colors/bull/bullhide-sand.jpeg', 'Sand Bull Leather')">
+                                            <img src="images/leather-colors/bull/bullhide-sand.jpeg" alt="Sand Bull" class="color-sample">
+                                            <span class="color-name">Sand</span>
+                                        </div>
+                                        <div class="color-option" onclick="enlargeImage('images/leather-colors/bull/bullhide-golden.jpeg', 'Golden Bull Leather')">
+                                            <img src="images/leather-colors/bull/bullhide-golden.jpeg" alt="Golden Bull" class="color-sample">
+                                            <span class="color-name">Golden</span>
+                                        </div>
+                                        <div class="color-option" onclick="enlargeImage('images/leather-colors/bull/bullhide-cream.jpeg', 'Cream Bull Leather')">
+                                            <img src="images/leather-colors/bull/bullhide-cream.jpeg" alt="Cream Bull" class="color-sample">
+                                            <span class="color-name">Cream</span>
+                                        </div>
+                                        <div class="color-option" onclick="enlargeImage('images/leather-colors/bull/bullhide-lead.jpeg', 'Lead Bull Leather')">
+                                            <img src="images/leather-colors/bull/bullhide-lead.jpeg" alt="Lead Bull" class="color-sample">
+                                            <span class="color-name">Lead</span>
+                                        </div>
+                                        <div class="color-option" onclick="enlargeImage('images/leather-colors/bull/bullhide-cobalt.jpeg', 'Cobalt Bull Leather')">
+                                            <img src="images/leather-colors/bull/bullhide-cobalt.jpeg" alt="Cobalt Bull" class="color-sample">
+                                            <span class="color-name">Cobalt</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="leather-option">
+                                <h4>Deer (2-3 oz)</h4>
+                
+                                <p>A thin leather with excellent flexibility and delicate feel.</p>
+                                <div class="leather-uses">
+                                    <strong>Used for:</strong>
+                                    <ul class="use-list">
+                                        <li>Weltings</li>
+                                        <li>Clean or natural underlays for trims</li>
+                                        <li>Full natural overlays</li>
+                                        <li>Hidden trims</li>
+                                        <li>Underlays for heel pieces</li>
+                                        <li>The laminated component of laminated tabs</li>
+                                        <li>Braided laces (up to 4 different colors)</li>
+                                    </ul>
+                                </div>
+                                <div class="color-options">
+                                    <h5>Available Colors</h5>
+                                    <div class="color-grid">
+                                        <div class="color-option" onclick="enlargeImage('images/leather-colors/deer/deer-black.jpeg', 'Black Deer Leather')">
+                                            <img src="images/leather-colors/deer/deer-black.jpeg" alt="Black Deer" class="color-sample">
+                                            <span class="color-name">Black</span>
+                                        </div>
+                                        <div class="color-option" onclick="enlargeImage('images/leather-colors/deer/deer-chocolate.jpeg', 'Chocolate Deer Leather')">
+                                            <img src="images/leather-colors/deer/deer-chocolate.jpeg" alt="Chocolate Deer" class="color-sample">
+                                            <span class="color-name">Chocolate</span>
+                                        </div>
+                                        <div class="color-option" onclick="enlargeImage('images/leather-colors/deer/deer-mahogany.jpeg', 'Mahogany Deer Leather')">
+                                            <img src="images/leather-colors/deer/deer-mahogany.jpeg" alt="Mahogany Deer" class="color-sample">
+                                            <span class="color-name">Mahogany</span>
+                                        </div>
+                                        <div class="color-option" onclick="enlargeImage('images/leather-colors/deer/deer-redwood.jpeg', 'Redwood Deer Leather')">
+                                            <img src="images/leather-colors/deer/deer-redwood.jpeg" alt="Redwood Deer" class="color-sample">
+                                            <span class="color-name">Redwood</span>
+                                        </div>
+                                        <div class="color-option" onclick="enlargeImage('images/leather-colors/deer/deer-rust.jpeg', 'Rust Deer Leather')">
+                                            <img src="images/leather-colors/deer/deer-rust.jpeg" alt="Rust Deer" class="color-sample">
+                                            <span class="color-name">Rust</span>
+                                        </div>
+                                        <div class="color-option" onclick="enlargeImage('images/leather-colors/deer/deer-tobacco.jpeg', 'Tobacco Deer Leather')">
+                                            <img src="images/leather-colors/deer/deer-tobacco.jpeg" alt="Tobacco Deer" class="color-sample">
+                                            <span class="color-name">Tobacco</span>
+                                        </div>
+                                        <div class="color-option" onclick="enlargeImage('images/leather-colors/deer/deer-golden.jpeg', 'Golden Deer Leather')">
+                                            <img src="images/leather-colors/deer/deer-golden.jpeg" alt="Golden Deer" class="color-sample">
+                                            <span class="color-name">Golden</span>
+                                        </div>
+                                        <div class="color-option" onclick="enlargeImage('images/leather-colors/deer/deer-saddle.jpeg', 'Saddle Deer Leather')">
+                                            <img src="images/leather-colors/deer/deer-saddle.jpeg" alt="Saddle Deer" class="color-sample">
+                                            <span class="color-name">Saddle</span>
+                                        </div>
+                                        <div class="color-option" onclick="enlargeImage('images/leather-colors/deer/deer-palomino.jpeg', 'Palomino Deer Leather')">
+                                            <img src="images/leather-colors/deer/deer-palomino.jpeg" alt="Palomino Deer" class="color-sample">
+                                            <span class="color-name">Palomino</span>
+                                        </div>
+                                        <div class="color-option" onclick="enlargeImage('images/leather-colors/deer/deer-braintan.jpeg', 'Braintan Deer Leather')">
+                                            <img src="images/leather-colors/deer/deer-braintan.jpeg" alt="Braintan Deer" class="color-sample">
+                                            <span class="color-name">Braintan</span>
+                                        </div>
+                                        <div class="color-option" onclick="enlargeImage('images/leather-colors/deer/deer-cream.jpeg', 'Cream Deer Leather')">
+                                            <img src="images/leather-colors/deer/deer-cream.jpeg" alt="Cream Deer" class="color-sample">
+                                            <span class="color-name">Cream</span>
+                                        </div>
+                                        <div class="color-option" onclick="enlargeImage('images/leather-colors/deer/deer-white.jpeg', 'White Deer Leather')">
+                                            <img src="images/leather-colors/deer/deer-white.jpeg" alt="White Deer" class="color-sample">
+                                            <span class="color-name">White</span>
+                                        </div>
+                                        <div class="color-option" onclick="enlargeImage('images/leather-colors/deer/deer-gray.jpeg', 'Gray Deer Leather')">
+                                            <img src="images/leather-colors/deer/deer-gray.jpeg" alt="Gray Deer" class="color-sample">
+                                            <span class="color-name">Gray</span>
+                                        </div>
+                                        <div class="color-option" onclick="enlargeImage('images/leather-colors/deer/deer-royalblue.jpeg', 'Royal Blue Deer Leather')">
+                                            <img src="images/leather-colors/deer/deer-royalblue.jpeg" alt="Royal Blue Deer" class="color-sample">
+                                            <span class="color-name">Royal Blue</span>
+                                        </div>
+                                        <div class="color-option" onclick="enlargeImage('images/leather-colors/deer/deer-forestgreen.jpeg', 'Forest Green Deer Leather')">
+                                            <img src="images/leather-colors/deer/deer-forestgreen.jpeg" alt="Forest Green Deer" class="color-sample">
+                                            <span class="color-name">Forest Green</span>
+                                        </div>
+                                        <div class="color-option" onclick="enlargeImage('images/leather-colors/deer/deer-purple.jpeg', 'Purple Deer Leather')">
+                                            <img src="images/leather-colors/deer/deer-purple.jpeg" alt="Purple Deer" class="color-sample">
+                                            <span class="color-name">Purple</span>
+                                        </div>
+                                        <div class="color-option" onclick="enlargeImage('images/leather-colors/deer/deer-turquoise.jpeg', 'Turquoise Deer Leather')">
+                                            <img src="images/leather-colors/deer/deer-turquoise.jpeg" alt="Turquoise Deer" class="color-sample">
+                                            <span class="color-name">Turquoise</span>
+                                        </div>
+                                        <div class="color-option" onclick="enlargeImage('images/leather-colors/deer/deer-hotpink.jpeg', 'Hot Pink Deer Leather')">
+                                            <img src="images/leather-colors/deer/deer-hotpink.jpeg" alt="Hot Pink Deer" class="color-sample">
+                                            <span class="color-name">Hot Pink</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                    </div>
+                </div>
+
+<!-- ...existing code... -->
+
+ <!-- Tabs Section -->
+                <div class="custom-option-section" id="tabs">
+                    <h3>Tab Options</h3>
+                    <div class="option-content">
+                        <div class="tab-description">
+                            <p>There are a number of tabs to choose from! Our standard tabs are a five or six stitched triangular tab or a natural tab, which are available with a natural underlay. It is also possible to customize this option and choose anything that is matching your vision for your moccasins. We've done hundreds styles, including leaves, hearts, flames, and anything your heart can imagine. All styles are equally durable. You can mix and match natural tabs with a finished moccasin and vice versa.</p>
+                        </div>
+                        <div class="option-details">
+                            <div class="tab-option">
+                                <div class="option-photo-medium" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1em; justify-items: center;">
+                                    <div class="photo-with-label">
+                                        <img src="images/tabs/standard-black-tabs.jpg" alt="Standard Black Tabs" class="medium-photo" style="max-width: 140px; width: 100%; height: auto;">
+                                        <p class="photo-label">Standard Black</p>
+                                    </div>
+                                    <div class="photo-with-label">
+                                        <img src="images/tabs/standard-red-tabs.jpg" alt="Laminated Red and White Tabs" class="medium-photo" style="max-width: 140px; width: 100%; height: auto;">
+                                        <p class="photo-label">Laminated Red & White</p>
+                                    </div>
+                                    <div class="photo-with-label">
+                                        <img src="images/tabs/green-laminated-tabs.jpg" alt="Laminated Green" class="medium-photo" style="max-width: 140px; width: 100%; height: auto;">
+                                        <p class="photo-label">Laminated Brown & Green</p>
+                                    </div>
+                                    <div class="photo-with-label">
+                                        <img src="images/tabs/natural-tabs.jpg" alt="Standard Natural Tabs" class="medium-photo" style="max-width: 140px; width: 100%; height: auto;">
+                                        <p class="photo-label">Standard Natural</p>
+                                    </div>
+                                    <div class="photo-with-label">
+                                        <img src="images/tabs/natural-tabs-finished-trim.jpg" alt="Standard Green Tabs" class="medium-photo" style="max-width: 140px; width: 100%; height: auto;">
+                                        <p class="photo-label">Natural Tabs, Finished Trim</p>
+                                    </div>
+                                    <div class="photo-with-label">
+                                        <img src="images/tabs/carved-paw-tabs.jpg" alt="Standard Blue Tabs" class="medium-photo" style="max-width: 140px; width: 100%; height: auto;">
+                                        <p class="photo-label">Carved Paws</p>
+                                    </div>
+                                           <div class="photo-with-label">
+                                        <img src="images/tabs/carved-leaf-tabs.jpg" alt="Standard Black Tabs" class="medium-photo" style="max-width: 140px; width: 100%; height: auto;">
+                                        <p class="photo-label">Carved Leaves</p>
+                                    </div>
+                                    <div class="photo-with-label">
+                                        <img src="images/tabs/big-leaf-tabs.jpg" alt="Laminated Red and White Tabs" class="medium-photo" style="max-width: 140px; width: 100%; height: auto;">
+                                        <p class="photo-label">Big Leaves</p>
+                                    </div>
+                                    <div class="photo-with-label">
+                                        <img src="images/tabs/snake-tabs.jpeg" alt="Laminated Green" class="medium-photo" style="max-width: 140px; width: 100%; height: auto;">
+                                        <p class="photo-label">Snakeskin</p>
+                                    </div>
+                                    <div class="photo-with-label">
+                                        <img src="images/tabs/die-tabs.jpg" alt="Standard Natural Tabs" class="medium-photo" style="max-width: 140px; width: 100%; height: auto;">
+                                        <p class="photo-label">Colored & Carved Die</p>
+                                    </div>
+                                    <div class="photo-with-label">
+                                        <img src="images/tabs/symbol-carved-tabs.jpg" alt="Standard Green Tabs" class="medium-photo" style="max-width: 140px; width: 100%; height: auto;">
+                                        <p class="photo-label">Colored & Carved Symbols</p>
+                                    </div>
+                                    <div class="photo-with-label">
+                                        <img src="images/tabs/gear-tabs.jpg" alt="Standard Blue Tabs" class="medium-photo" style="max-width: 140px; width: 100%; height: auto;">
+                                        <p class="photo-label">Green Gears</p>
+                                    </div>
+                                           <div class="photo-with-label">
+                                        <img src="images/tabs/feather-tabs.jpg" alt="Standard Black Tabs" class="medium-photo" style="max-width: 140px; width: 100%; height: auto;">
+                                        <p class="photo-label">3D Feathers</p>
+                                    </div>
+                                    <div class="photo-with-label">
+                                        <img src="images/tabs/flame-tabs.jpg" alt="Laminated Red and White Tabs" class="medium-photo" style="max-width: 140px; width: 100%; height: auto;">
+                                        <p class="photo-label">Red Flames</p>
+                                    </div>
+                                    <div class="photo-with-label">
+                                        <img src="images/tabs/blue-tabs.jpeg" alt="Laminated Green" class="medium-photo" style="max-width: 140px; width: 100%; height: auto;">
+                                        <p class="photo-label">Blue with Celtic Symbols</p>
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+<!-- Add this complete Heels Section after the Tabs Section -->
+<div class="custom-option-section" id="heels">
+    <h3>Heel Options</h3>
+    <div class="option-content">
+        <div class="heel-description">
+            <p>You have the option to choose from our standard or any pre-existing heel designs. We are also open to custom options on these details and have done many different designs on the heel to fit the vision of the customer. There is a standard heel design, but we also have a few designs we do regularly, such as the lotus, Lynn's Flower, and Single or Double point. As you can see below, your imagination is the limit to the customization.</p>
+        </div>
+        <div class="option-details">
+            <div class="heel-option">
+                <div class="option-photo-medium" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1em; justify-items: center;">
+                    <div class="photo-with-label">
+                        <img src="images/heels/standard-heel.jpg" alt="Standard Heel" class="medium-photo" style="max-width: 140px; width: 100%; height: auto;">
+                        <p class="photo-label">Standard</p>
+                    </div>
+                    <div class="photo-with-label">
+                        <img src="images/heels/R-script-heel.jpg" alt="R Script Heel" class="medium-photo" style="max-width: 140px; width: 100%; height: auto;">
+                        <p class="photo-label">R Script</p>
+                    </div>
+                    <div class="photo-with-label">
+                        <img src="images/heels/carved-celtic-boar-heel.jpg" alt="Double Point Heel" class="medium-photo" style="max-width: 140px; width: 100%; height: auto;">
+                        <p class="photo-label">Celtic Boar</p>
+                    </div>
+                    <div class="photo-with-label">
+                        <img src="images/heels/double-celtic-loop-heel.jpg" alt="Triple Point Heel" class="medium-photo" style="max-width: 140px; width: 100%; height: auto;">
+                        <p class="photo-label">Double Braided Loops</p>
+                    </div>
+                    <div class="photo-with-label">
+                        <img src="images/heels/celtic-knot-heel.jpg" alt="Lynn's Flower Heel" class="medium-photo" style="max-width: 140px; width: 100%; height: auto;">
+                        <p class="photo-label">Triquetra</p>
+                    </div>
+                    <div class="photo-with-label">
+                        <img src="images/heels/custom-celtic-heel.jpg" alt="Lotus Heel" class="medium-photo" style="max-width: 140px; width: 100%; height: auto;">
+                        <p class="photo-label">Interlaced Celtic Dragons</p>
+                    </div>
+                    <div class="photo-with-label">
+                        <img src="images/heels/hanzi-heel.jpg" alt="Leaf Shaped Heel" class="medium-photo" style="max-width: 140px; width: 100%; height: auto;">
+                        <p class="photo-label">Hanzi</p>
+                    </div>
+                    <div class="photo-with-label">
+                        <img src="images/heels/d20-heel.jpg" alt="Heart Shaped Heel" class="medium-photo" style="max-width: 140px; width: 100%; height: auto;">
+                        <p class="photo-label">Carved D20</p>
+                    </div>
+                    <div class="photo-with-label">
+                        <img src="images/heels/oroboros-heel.jpg" alt="Floral Carved Heel" class="medium-photo" style="max-width: 140px; width: 100%; height: auto;">
+                        <p class="photo-label">Ouroboros</p>
+                    </div>
+                    <div class="photo-with-label">
+                        <img src="images/heels/crow-heel.jpg" alt="Geometric Carved Heel" class="medium-photo" style="max-width: 140px; width: 100%; height: auto;">
+                        <p class="photo-label">Stitched Crow Overlay</p>
+                    </div>
+                    <div class="photo-with-label">
+                        <img src="images/heels/pig-heel.jpg" alt="Nature Carved Heel" class="medium-photo" style="max-width: 140px; width: 100%; height: auto;">
+                        <p class="photo-label">Stitched Pig</p>
+                    </div>
+                    <div class="photo-with-label">
+                        <img src="images/heels/cupcake-heel.jpg" alt="Custom Carved Heel" class="medium-photo" style="max-width: 140px; width: 100%; height: auto;">
+                        <p class="photo-label">Painted Cupcake</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Buttons Section -->
+<div class="custom-option-section" id="buttons">
+    <h3>Button Options</h3>
+    <div class="option-content">
+        <div class="button-description">
+            <p>We use an extensive range of buttons to cater to your personal style.</p>
+            
+            <!-- Quicksilver Buttons moved here under the description -->
+            <div class="button-type quicksilver-buttons-left" style="margin-top: 2rem; max-width: 400px;">
+                <h4>Quicksilver Buttons</h4>
+                <img src="images/buttons/newbutton.jpg" alt="Quicksilver Buttons" class="button-img" style="max-width:100%;height:auto;">
+                <p class="option-note">All QS designs available in copper, bronze, nickel silver, or solid silver metals</p>
+                <p class="option-link"><a href="https://cdn.shopify.com/s/files/1/0563/0515/6259/files/quicksilvermint-brochure-order.pdf?v=1619380113" target="_blank" rel="noopener noreferrer">Click Here for TONS of more Quicksilver Button Options</a></p>
+            </div>
+        </div>
+        
+        <div class="option-details">
+            <!-- Updated button-flex-grid with glass buttons first -->
+            <div class="button-flex-grid">
+                <div class="button-type">
+                    <h4>Glass Buttons</h4>
+                    <img src="images/buttons/Glass-Buttons.jpg" alt="Color Glass Buttons Chart" class="button-img">
+                    <img src="images/buttons/Glass2.jpeg" alt="Color Glass Buttons Chart" class="button-img">
+                    <p class="option-note">Full list of options available upon request</p>
+                    <ul class="option-list">
+                        <li>Ring-backed</li>
+                        <li>Two Hole</li>
+                    </ul>
+                </div>
+                
+                <div class="button-type">
+                    <h4>Antler Buttons</h4>
+                    <div class="antler-type">
+                        <p>Crowns</p> 
+                        <img src="images/buttons/newantler.jpg" alt="Antler Buttons" class="button-img">
+                        <li>Natural or Burnt Finish</li>
+                    </div>
+                    <div class="antler-type">
+                        <p>Sidecuts</p>
+                        <img src="images/buttons/newsidecut.jpg" alt="Antler Sidecuts" class="button-img">
+                        <ul class="sub-list">
+                            <li>Polished: Natural, Dyed, or Burnt</li>
+                            <li>Dye Colors: Black, Walnut, or Custom</li>
+                            <li>Unpolished</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="button-type">
+                    <h4>Handstamped Buttons</h4>
+                    <img src="images/buttons/bj-conchas.jpg" alt="Handstamped Buttons" class="button-img">
+                </div>
+                
+                <div class="button-type">
+                    <h4>Coin Buttons</h4>
+                    <img src="images/buttons/newcoin.jpg" alt="Penny Coin Buttons" class="button-img">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+                    </div>
+                    <style>
+                        .button-flex-grid {
+                            display: flex;
+                            flex-wrap: wrap;
+                            gap: 2em;
+                            justify-content: center;
+                            margin-top: 1.5em;
+                        }
+                        .button-type {
+                            flex: 1 1 340px;
+                            max-width: 360px;
+                            background: #faf9f7;
+                            border-radius: 12px;
+                            box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+                            padding: 1.2em 1em 1.5em 1em;
+                            text-align: center;
+                        }
+                        .button-type h4 {
+                            margin-bottom: 0.7em;
+                            font-size: 1.2em;
+                        }
+                        .button-img {
+                            width: 90%;
+                            max-width: 280px;
+                            height: auto;
+                            margin-bottom: 0.7em;
+                            border-radius: 8px;
+                            box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+                        }
+                        .option-note {
+                            font-size: 0.98em;
+                            color: #6a5d4d;
+                            margin-bottom: 0.5em;
+                        }
+                        .option-link a {
+                            color: #3a3a8a;
+                            text-decoration: underline;
+                        }
+                        .antler-type {
+                            margin-top: 1em;
+                            margin-bottom: 1em;
+                        }
+                        .sub-list {
+                            text-align: left;
+                            margin: 0.5em auto 1em auto;
+                            display: inline-block;
+                        }
+                        .option-list {
+                            text-align: left;
+                            margin: 0.5em auto 1em auto;
+                            display: inline-block;
+                        }
+
+                        /* Styling for trim styles, tabs, heels, and soles images */
+#trim-styles .medium-photo,
+#tabs .medium-photo,
+#heels .medium-photo,
+#soles .medium-photo {
+    border-radius: 12px !important;
+    border: 2px solid #d4c4a8 !important;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.12) !important;
+    padding: 4px;
+    background: #ffffff;
+}
+
+/* Specific styling for sole images to make them larger and more prominent */
+#soles .medium-photo {
+    border-radius: 16px !important;
+    border: 3px solid #c7a97b !important;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15) !important;
+    padding: 6px;
+}
+
+/* Ensure proper spacing and alignment for photo grids */
+#trim-styles .option-photo-medium,
+#tabs .option-photo-medium,
+#heels .option-photo-medium {
+    margin-bottom: 1.5em;
+}
+
+/* Style for photo labels under tab and heel images */
+#tabs .photo-label,
+#heels .photo-label {
+    font-size: 0.9em;
+    font-weight: 600;
+    color: #5a4a3a;
+    margin-top: 0.5em;
+    text-align: center;
+}
+                    </style>
+
+<!-- Edge Finishing Section -->
+<div class="custom-option-section" id="edge-finishing">
+    <h3>Edge Finishing Options</h3>
+    <div class="option-content">
+        <div class="edge-finishing-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 3em;">
+            <!-- Weltings Section (Left Side) -->
+            <div class="edge-section">
+                <h4>Weltings</h4>
+                <div class="edge-description">
+                    <p style="font-size: 0.95em; margin-bottom: 1em;">Any deer color available</p>
+                    <ul style="text-align: left; margin-bottom: 1.5em;">
+                        <li><strong>Full Welting</strong><br><span style="font-weight:normal; font-size: 0.9em;">(goes across the top and then down the button edge)</span></li>
+                        <li><strong>Top Welting</strong><br><span style="font-weight:normal; font-size: 0.9em;">(only on the top edge of the moccasin)</span></li>
+                    </ul>
+                    <p style="font-size:0.9em; color:#a05a2c; margin-bottom:1.5em; font-style: italic;">*We do not recommend weltings on our 1 or 2 button moccasins*</p>
+                </div>
+                <!-- Welting Photos -->
+                <div class="edge-photos" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1em;">
+                    <div class="photo-slot" style="background: #f8f6f2; border-radius: 8px; min-height: 140px; border: 1px solid #e2d7c3; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 0.5em;">
+                        <img src="images/welting/fullwelt2.jpeg" alt="Full Welting Example" style="width: 90%; max-width: 120px; aspect-ratio: 1/1; object-fit: cover; border-radius: 6px; box-shadow: 0 2px 6px rgba(0,0,0,0.10); margin-bottom: 0.5em;">
+                        <span style="font-weight: bold; font-size: 0.85em;">Full Welting</span>
+                    </div>
+                    <div class="photo-slot" style="background: #f8f6f2; border-radius: 8px; min-height: 140px; border: 1px solid #e2d7c3; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 0.5em;">
+                        <img src="images/welting/topwelt2.jpeg" alt="Top Welting Example" style="width: 90%; max-width: 120px; aspect-ratio: 1/1; object-fit: cover; border-radius: 6px; box-shadow: 0 2px 6px rgba(0,0,0,0.10); margin-bottom: 0.5em;">
+                        <span style="font-weight: bold; font-size: 0.85em;">Top Welting</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Top Flap Section (Right Side) -->
+            <div class="edge-section">
+                <h4>Top Flap</h4>
+                <div class="edge-description">
+                    <ul style="text-align: left; margin-bottom: 1.5em;">
+                        <li><strong>Straight</strong><br><span style="font-weight:normal; font-size: 0.9em;">Buffalo, Bull, or Deer</span></li>
+                        <li><strong>Natural</strong><br><span style="font-weight:normal; font-size: 0.9em;">Buffalo or Deer</span></li>
+                    </ul>
+                </div>
+                <!-- Top Flap Photos -->
+                <div class="edge-photos" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1em;">
+                    <div class="photo-slot" style="background: #f8f6f2; border-radius: 8px; min-height: 140px; border: 1px solid #e2d7c3; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 0.5em;">
+                        <img src="images/welting/straight2.jpeg" alt="Straight Top Flap Example" style="width: 90%; max-width: 120px; aspect-ratio: 1/1; object-fit: cover; border-radius: 6px; box-shadow: 0 2px 6px rgba(0,0,0,0.10); margin-bottom: 0.5em;">
+                        <span style="font-weight: bold; font-size: 0.85em;">Straight</span>
+                    </div>
+                    <div class="photo-slot" style="background: #f8f6f2; border-radius: 8px; min-height: 140px; border: 1px solid #e2d7c3; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 0.5em;">
+                        <img src="images/welting/naturaledge2.jpeg" alt="Natural Top Flap Example" style="width: 90%; max-width: 120px; aspect-ratio: 1/1; object-fit: cover; border-radius: 6px; box-shadow: 0 2px 6px rgba(0,0,0,0.10); margin-bottom: 0.5em;">
+                        <span style="font-weight: bold; font-size: 0.85em;">Natural</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Soles Section -->
+<div class="custom-option-section" id="soles">
+    <h3>Sole Options</h3>
+    <div class="option-content" style="max-width: 1200px; margin: 0 auto; padding: 0 2em;">
+        <p style="font-size: 1.15em; font-weight: bold; margin-bottom: 2em; text-align: center; padding: 0 1em;">
+            We are proud to offer these 2 different types of soles to make your moccasins feel and wear exactly the way you want them to.
+        </p>
+        <div class="option-details" style="display: flex; flex-direction: column; gap: 3em; align-items: center;">
+            <div class="sole-type" style="text-align: center; padding: 2.5em; background: #faf9f7; border-radius: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); max-width: 750px; width: 100%;">
+                <h4 style="font-size: 1.4em; margin-bottom: 1em;">Vibram Newflex</h4>
+                <div class="option-photo-medium">
+                    <img src="images/soles/vibram.jpeg" alt="Vibram Newflex Sole" class="medium-photo" style="max-width: 400px; width: 100%; height: auto; border-radius: 12px; box-shadow: 0 3px 10px rgba(0,0,0,0.12);">
+                </div>
+                <p style="text-align: left; margin: 1.5em 0; padding: 0 1.5em; line-height: 1.7; font-size: 1.05em;">The Newflex sole is our favorite Vibram sole and has become the only one we care to use unless there is a special need. It has great cushion, traction, flexibility and is long wearing, Vibrram combined many of there soling technologies into this great sole.</p>
+                <p style="text-align: left; margin: 1.5em 0; padding: 0 1.5em; line-height: 1.7; font-size: 1.05em;">All Vibram® Soles are glued on to a mid-sole which is sewn on to the uppers. These soles can be replaced at any quality shoe repair facility. These soles are an extra $49, but very worth it.</p>
+            </div>
+            <div class="sole-type" style="text-align: center; padding: 2.5em; background: #faf9f7; border-radius: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); max-width: 750px; width: 100%;">
+                <h4 style="font-size: 1.4em; margin-bottom: 1em;">Conveyor Belt</h4>
+                <div class="option-photo-medium">
+                    <img src="images/soles/conveyor.jpeg" alt="Conveyor Belt Sole" class="medium-photo" style="max-width: 400px; width: 100%; height: auto; border-radius: 12px; box-shadow: 0 3px 10px rgba(0,0,0,0.12);">
+                </div>
+                <p style="text-align: left; margin: 1.5em 0; padding: 0 1.5em; line-height: 1.7; font-size: 1.05em;">Our standard conveyer belt sole is made from polyurethane and has a normal wear expectancy of 5 years. This is the most tactile sole we use. It feels very similar to a leather sole, but with superior traction and durability. If you want a true moccasin feel, this is the sole you want.</p>
+                <p style="text-align: left; margin: 1.5em 0; padding: 0 1.5em; line-height: 1.7; font-size: 1.05em;">When the time comes for your moccasins to be resoled, you must send them back to us. There is no extra charge for this sole. Resoling costs $149.00 plus shipping.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+                                                                 
+                                <!-- Removed duplicate height-option blocks -->
+
+    <!-- Image Enlargement Modal -->
+    <div id="imageModal" class="image-modal" onclick="closeImageModal()">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <span class="close-modal" onclick="closeImageModal()">&times;</span>
+            <img id="enlargedImage" src="" alt="">
+            <p id="imageCaption"></p>
+        </div>
+
+    <script src="scripts/main.js"></script>
+    <script>
+document.addEventListener('DOMContentLoaded', function() {
+  const buttonsGrid = document.querySelector('.buttons-grid'); // Update this selector to match your buttons tab
+  let loadedButtons = [];
+
+  function addButtonImageIfExists(i) {
+    const img = document.createElement('img');
+    img.src = `images/buttons/button${i}.jpeg`; // Update path and naming as needed
+    img.alt = `Button Image ${i}`;
+    img.className = 'button-image';
+    img.onload = function() {
+      buttonsGrid.appendChild(img);
+      loadedButtons.push(img);
+    };
+    // If image doesn't exist, do nothing (onerror)
+  }
+
+  for (let i = 1; i <= 50; i++) { // Adjust range as needed
+    addButtonImageIfExists(i);
+  }
+});
+    </script>
+</body>
+  
+   
+    <script src="scripts/main.js"></script>
+</body>
+</html>

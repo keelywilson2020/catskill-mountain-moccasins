@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - Catskill Mt. Leather Co.</title>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <h1><a href="index.html" style="text-decoration: none; color: inherit;">Catskill Mt. Leather Co.</a></h1>
+            <button class="menu-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Side Navigation Popout -->
+    <nav class="side-nav" id="sideNav">
+        <div class="side-nav-content">
+            <button class="close-btn" aria-label="Close navigation">&times;</button>
+            <div class="nav-logo">
+                <a href="index.html" class="nav-logo-link">
+                    <img src="images/logo.png" alt="Catskill Mt. Leather Co. Logo" class="nav-logo-img">
+                </a>
+            </div>
+            <ul class="side-nav-menu">
+                <li class="nav-dropdown">
+                    <a href="about.html" class="nav-link dropdown-toggle">About Us <span class="dropdown-arrow">▼</span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="about.html" class="dropdown-link" data-tab="history">Our History</a></li>
+                        <li><a href="about.html" class="dropdown-link" data-tab="mission">Our Mission</a></li>
+                        <li><a href="about.html" class="dropdown-link" data-tab="makers">Meet Your Makers</a></li>
+                        <li><a href="about.html" class="dropdown-link" data-tab="schedule">Show Schedule</a></li>
+                        <li><a href="about.html" class="dropdown-link" data-tab="famous">Famous Footwear</a></li>
+                    </ul>
+                </li>
+                <li class="nav-dropdown">
+                    <a href="custom-design.html" class="nav-link dropdown-toggle">Shop <span class="dropdown-arrow">▼</span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="custom-design.html" class="dropdown-link">Custom Design Options</a></li>
+                        <li><a href="price-quote.html" class="dropdown-link">Price Quote Submission Form</a></li>
+                        <li><a href="care-guide.html" class="dropdown-link">Wear & Care</a></li>
+                    </ul>
+                </li>
+                <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+                <li><a href="order-status.html" class="nav-link">Check My Order Status</a></li>
+                <li><a href="payment.html" class="nav-link">Make a Payment</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Overlay for side navigation -->
+    <div class="nav-overlay" id="navOverlay"></div>
+
+    <main>
+        <section class="page-content">
+            <div class="gallery-header">
+                <h2>Gallery</h2>
+                <p class="gallery-intro">Browse our collection of handcrafted leather goods. Each piece represents hours of skilled craftsmanship and attention to detail.</p>
+            </div>
+            
+            <div class="content-container">
+                <div class="photo-gallery">
+                <div class="gallery-grid">
+                    <!-- Removed catskillbag.jpeg and catskillpurse.jpeg -->
+                    <img src="images/gallery/gallery1.jpeg" alt="Handcrafted Moccasins" class="gallery-image" onclick="openModal(this)">
+                    <img src="images/gallery/gallery2.jpeg" alt="Custom Leather Work" class="gallery-image" onclick="openModal(this)">
+                    <img src="images/gallery/gallery3.jpeg" alt="Artisan Craftsmanship" class="gallery-image" onclick="openModal(this)">
+                    <img src="images/gallery/gallery4.jpeg" alt="Moccasin Detail" class="gallery-image" onclick="openModal(this)">
+                    <img src="images/gallery/gallery5.jpeg" alt="Leather Footwear" class="gallery-image" onclick="openModal(this)">
+                    <img src="images/gallery/gallery6.jpeg" alt="Custom Design" class="gallery-image" onclick="openModal(this)">
+                    <img src="images/gallery/gallery7.jpeg" alt="Traditional Techniques" class="gallery-image" onclick="openModal(this)">
+                    <img src="images/gallery/gallery8.jpeg" alt="Skilled Craftsmanship" class="gallery-image" onclick="openModal(this)">
+                    <img src="images/gallery/gallery9.jpeg" alt="Quality Leatherwork" class="gallery-image" onclick="openModal(this)">
+                    <img src="images/gallery/gallery10.jpeg" alt="Handmade Boots" class="gallery-image" onclick="openModal(this)">
+                </div>
+            </div>
+            </div>
+            <div id="imageModal" class="modal" onclick="closeModal(event)">
+                <span class="modal-close" onclick="closeModal(event)">&times;</span>
+                <span class="modal-arrow modal-arrow-left" onclick="prevImage(event)">&lt;</span>
+                <img class="modal-content" id="modalImg" src="" alt="">
+                <span class="modal-arrow modal-arrow-right" onclick="nextImage(event)">&gt;</span>
+            </div>
+            <style>
+              .gallery-container {
+                max-width: 1200px;
+                margin: 0 auto;
+                padding-left: 1cm;
+                padding-right: 0;
+              }
+              .gallery-container h2 {
+                text-align: center;
+                margin-bottom: 1.5em;
+                font-size: 2.2em;
+                letter-spacing: 0.04em;
+              }
+              .gallery-grid {
+                display: grid;
+                grid-template-columns: repeat(4, minmax(280px, 1fr));
+                gap: 1em;
+                width: 100%;
+                box-sizing: border-box;
+                margin-left: -0.25in;  /* Move grid left by a quarter inch */
+                margin-right: 0;
+              }
+              .gallery-grid img {
+                width: 100%;
+                aspect-ratio: 1/1;
+                border-radius: 10px;
+                box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+                object-fit: contain;
+                background: #fff;
+                transition: transform 0.2s;
+                cursor: pointer;
+              }
+              .gallery-grid img:hover {
+                transform: scale(1.04);
+                box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+              }
+              /* Modal styles */
+              .modal {
+                display: none;
+                position: fixed;
+                z-index: 1000;
+                left: 0;
+                top: 0;
+                width: 100vw;
+                height: 100vh;
+                 background: rgba(0,0,0,0.8);
+                justify-content: center;
+                align-items: center;
+                flex-direction: row;
+              }
+              .modal-content {
+                max-width: 90vw;
+                max-height: 90vh;
+                margin: auto;
+                display: block;
+                border-radius: 12px;
+                box-shadow: 0 4px 32px rgba(0,0,0,0.25);
+                object-fit: contain;
+              }
+              .modal-close {
+                position: absolute;
+                top: 32px;
+                right: 48px;
+                color: #fff;
+                font-size: 2.5em;
+                font-weight: bold;
+                cursor: pointer;
+                z-index: 1001;
+              }
+              .modal-arrow {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                color: #fff;
+                font-size: 4em;
+                font-weight: bold;
+                cursor: pointer;
+                z-index: 1002;
+                user-select: none;
+                background: none;
+                border: none;
+              }
+              .modal-arrow-left {
+                left: 5vw;
+              }
+              .modal-arrow-right {
+                right: 5vw;
+              }
+            </style>
+        </section>
+    </main>
+
+
+    <script src="scripts/main.js"></script>
+    <script>
+document.addEventListener('DOMContentLoaded', function() {
+  const galleryGrid = document.querySelector('.gallery-grid');
+  let loadedImages = [];
+
+  // Dynamically add images and store references
+  for (let i = 11; i <= 789; i++) {
+    const img = document.createElement('img');
+    img.src = `images/gallery/gallery${i}.jpeg`;
+    img.alt = `Gallery Image ${i}`;
+    img.className = 'gallery-image';
+    img.onload = function() {
+      img.onclick = function() { openModal(img); };
+      loadedImages.push(img);
+    };
+    img.onerror = function() { img.remove(); };
+    galleryGrid.appendChild(img);
+  }
+
+  // Modal navigation logic
+  let currentIndex = -1;
+
+  window.openModal = function(imgElem) {
+    const modal = document.getElementById('imageModal');
+    const modalImg = document.getElementById('modalImg');
+    modal.style.display = 'flex';
+    modalImg.src = imgElem.src;
+    modalImg.alt = imgElem.alt;
+    currentIndex = loadedImages.findIndex(img => img.src === imgElem.src);
+  };
+
+  window.closeModal = function(event) {
+    const modal = document.getElementById('imageModal');
+    if (event.target.classList.contains('modal') || event.target.classList.contains('modal-close')) {
+      modal.style.display = 'none';
+    }
+  };
+
+  window.prevImage = function(event) {
+    event.stopPropagation();
+    if (currentIndex > 0) {
+      currentIndex--;
+      showImage(currentIndex);
+    }
+  };
+
+  window.nextImage = function(event) {
+    event.stopPropagation();
+    if (currentIndex < loadedImages.length - 1) {
+      currentIndex++;
+      showImage(currentIndex);
+    }
+  };
+
+  function showImage(index) {
+    const modalImg = document.getElementById('modalImg');
+    modalImg.src = loadedImages[index].src;
+    modalImg.alt = loadedImages[index].alt;
+  }
+});
+</script>
+</body>
+</html>

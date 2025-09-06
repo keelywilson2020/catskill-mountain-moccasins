@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wear & Care - Catskill Mt. Leather Co.</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <style>
+        /* Add this to your CSS or <style> block on both custom-design.html and price-quote.html */
+        .-copyright p {
+          font-size: 0.9em;
+          text-align: center;
+          margin: 1em 0;
+          color: #bbb;
+        }
+        .-copyright p .copyright-text {
+          color: #fff;
+          font-weight: bold;
+        }
+        .care-guide h2,
+.page-content h2 {
+    margin-top: 0em;
+    margin-bottom: 0.5em;
+}
+.care-guide h3 {
+    margin-bottom: 0.2em;
+}
+
+/* Reduce space between main heading and first section */
+.page-content h2 + .care-guide {
+    margin-top: 0.5em;
+}
+
+.care-guide .guide-section:first-child {
+    margin-top: 0.5em;
+}
+
+/* Stylized sectioning for care guide */
+.guide-section {
+    background: #faf9f7;
+    border-radius: 16px;
+    padding: 2em;
+    margin: 2em 0;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    border: 1px solid #e8e2d5;
+}
+
+.step-section {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 1.5em;
+    margin: 1.5em 0;
+    border-left: 4px solid #c7a97b;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.care-subsection {
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 1.5em;
+    margin: 1.5em 0;
+    border: 1px solid #e0d6c7;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+}
+
+.care-subsection h4 {
+    color: #5a4a3a;
+    border-bottom: 2px solid #d4c4a8;
+    padding-bottom: 0.5em;
+    margin-bottom: 1em;
+}
+
+.video-section {
+    background: linear-gradient(135deg, #f8f6f3 0%, #f0ebe2 100%);
+    border: 2px solid #d4c4a8;
+}
+
+.contact-info {
+    background: linear-gradient(135deg, #5a4a3a 0%, #6b5b4a 100%);
+    color: #ffffff;
+    border-radius: 16px;
+    padding: 2em;
+    margin: 2em 0;
+    text-align: center;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+}
+
+.contact-info h3 {
+    color: #ffffff;
+    margin-bottom: 1em;
+}
+
+.contact-info a {
+    color: #f4e6d3;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.contact-info a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+.important-note {
+    background: #fff3cd;
+    border: 1px solid #ffeaa7;
+    border-radius: 8px;
+    padding: 1em;
+    margin: 1em 0;
+    border-left: 4px solid #f39c12;
+}
+
+.pro-tip {
+    background: #d1ecf1;
+    border: 1px solid #bee5eb;
+    border-radius: 8px;
+    padding: 1em;
+    margin: 1em 0;
+    border-left: 4px solid #17a2b8;
+}
+
+.warning-note {
+    background: #f8d7da;
+    border: 1px solid #f5c6cb;
+    border-radius: 8px;
+    padding: 1em;
+    margin: 1em 0;
+    border-left: 4px solid #dc3545;
+}
+
+.product-list {
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 1em 1.5em;
+    margin: 1em 0;
+    border: 1px solid #e9ecef;
+}
+
+.product-list li {
+    margin: 0.5em 0;
+}
+
+.product-list a {
+    color: #3a3a8a;
+    font-weight: 600;
+}
+
+/* Center all images on the care guide page */
+.step-image,
+.step-images-dual {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1em 0;
+}
+
+.step-image img,
+.step-images-dual img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.step-images-dual {
+    gap: 1em;
+    flex-wrap: wrap;
+}
+
+.step-images-dual img {
+    flex: 0 0 auto;
+    max-width: 300px;
+    min-width: 250px;
+}
+
+/* Constrain video width and center it */
+.video-container {
+    max-width: 600px;
+    margin: 0 auto;
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .guide-section,
+    .step-section,
+    .care-subsection,
+    .contact-info {
+        padding: 1.2em;
+        margin: 1.2em 0;
+    }
+    
+    .video-container {
+        max-width: 100%;
+        margin: 0 auto 1em auto;
+    }
+    
+    .step-images-dual {
+        flex-direction: column;
+    }
+    
+    .step-images-dual img {
+        min-width: auto;
+        max-width: 400px;
+    }
+}
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <h1><a href="index.html" style="text-decoration: none; color: inherit;">Catskill Mt. Leather Co.</a></h1>
+            <button class="menu-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Side Navigation Popout -->
+    <nav class="side-nav" id="sideNav">
+        <div class="side-nav-content">
+            <button class="close-btn" aria-label="Close navigation">&times;</button>
+            <div class="nav-logo">
+                <a href="index.html" class="nav-logo-link">
+                    <img src="images/logo.png" alt="Catskill Mt. Leather Co. Logo" class="nav-logo-img">
+                </a>
+            </div>
+            <ul class="side-nav-menu">
+                <li class="nav-dropdown">
+                    <a href="about.html" class="nav-link dropdown-toggle">About Us <span class="dropdown-arrow">▼</span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="about.html" class="dropdown-link" data-tab="history">Our History</a></li>
+                        <li><a href="about.html" class="dropdown-link" data-tab="mission">Our Mission</a></li>
+                        <li><a href="about.html" class="dropdown-link" data-tab="makers">Meet Your Makers</a></li>
+                        <li><a href="about.html" class="dropdown-link" data-tab="schedule">Show Schedule</a></li>
+                        <li><a href="about.html" class="dropdown-link" data-tab="famous">Famous Footwear</a></li>
+                    </ul>
+                </li>
+                <li class="nav-dropdown">
+                    <a href="custom-design.html" class="nav-link dropdown-toggle">Shop <span class="dropdown-arrow">▼</span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="custom-design.html" class="dropdown-link">Custom Design Options</a></li>
+                        <li><a href="price-quote.html" class="dropdown-link">Price Quote Submission Form</a></li>
+                        <li><a href="care-guide.html" class="dropdown-link">Wear & Care</a></li>
+                    </ul>
+                </li>
+                <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+                <li><a href="order-status.html" class="nav-link">Check My Order Status</a></li>
+                <li><a href="payment.html" class="nav-link">Make a Payment</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Overlay for side navigation -->
+    <div class="nav-overlay" id="navOverlay"></div>
+
+    <main>
+        <!-- Shop Tab Navigation -->
+        <section class="about-tabs-section">
+            <div class="content-container">
+                <nav class="about-tabs" aria-label="Shop navigation">
+                    <button class="tab-button" onclick="window.location.href='custom-design.html'">Custom Design Options</button>
+                    <button class="tab-button" onclick="window.location.href='price-quote.html'">Price Quote Submission Form</button>
+                    <button class="tab-button active" onclick="window.location.href='care-guide.html'">Wear & Care</button>
+                </nav>
+            </div>
+        </section>
+
+        <section class="page-content">
+            <div class="content-container">
+                <h2>Wear & Care</h2>
+                
+                <section class="care-guide">
+                    <article class="guide-section">
+                        <h3>Wear Instructions</h3>
+                        <p>Your moccasins are handmade from natural materials and designed to mold to your feet over time. Follow this guide to ensure a proper fit, long-lasting comfort, and years of wear.</p>
+                        
+                        <!-- Step 1 -->
+                        <div class="step-section">
+                            <div class="step-content">
+                                <h4><strong>Step 1: Unbox & Admire</strong></h4>
+                                <p>Take your moccasins out of the box and unlace them if needed. Hold them in your hands and say, <em>"Wow, they're even nicer than I expected!"</em> You're about to begin a beautiful journey.</p>
+                            </div>
+                            <div class="step-image">
+                                <img src="images/wear-care/figure1.jpg" alt="Unboxing Moccasins">
+                            </div>
+                        </div>
+                        
+                        <!-- Step 2 -->
+                        <div class="step-section">
+                            <div class="step-content">
+                                <h4><strong>Step 2: Try Them On</strong></h4>
+                                <p>Remove socks or stockings for your first try-on—bare feet make it easier.</p>
+                                <p>The first time may feel snug. That's intentional. The leather will stretch and mold to your feet. Go slow.</p>
+                                <div class="important-note">
+                                    <strong>Important:</strong> Only pull from the front trim and the lower back (see Figure 2). <strong>Do not pull from the sides.</strong>
+                                </div>
+                                <p>If you're stuck, place your foot on the floor, wiggle your toes, and gently inch your foot forward while pulling in the recommended spots. After a few wears, they'll slide on with ease.</p>
+                            </div>
+                            <div class="step-image">
+                                <img src="images/wear-care/figure2.jpg" alt="Trying On Moccasins">
+                            </div>
+                        </div>
+                        
+                        <!-- Step 3 -->
+                        <div class="step-section">
+                            <div class="step-content">
+                                <h4><strong>Step 3: Lacing Instructions</strong></h4>
+                                <p>Once your foot is centered and fully inside:</p>
+                                <ol>
+                                    <li>Start with the <strong>bottom button</strong>—this one must be laced tightly to prevent your heel from slipping out (see Figure 3).</li>
+                                    <li>Pull the lace <strong>from the top</strong> of each heel tab over the <strong>top of each button</strong>, working your way up.</li>
+                                    <li>When you reach the top, cross the laces as shown (Figure 4), make a loop, tuck it between the lace and button, and pull it snug.</li>
+                                </ol>
+                                <div class="pro-tip">
+                                    <strong>Pro tip:</strong> Oil your laces for smoother, easier lacing.
+                                </div>
+                            </div>
+                            <div class="step-images-dual">
+                                <img src="images/wear-care/figure3.jpg" alt="Lacing Step Figure 3">
+                                <img src="images/wear-care/figure4.jpg" alt="Lacing Step Figure 4">
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Video Section -->
+                    <article class="guide-section video-section">
+                        <h3>How to Lace Your Moccasins</h3>
+                        <div class="video-container">
+                            <iframe 
+                                width="100%" 
+                                height="340" 
+                                src="https://www.youtube.com/embed/kNN3tbnm7xM?si=xn3u3RreMGBUKsmF" 
+                                title="How to Lace Your Moccasins" 
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                    </article>
+
+                    <!-- Care Instructions -->
+                    <article class="guide-section">
+                        <h3>Care Instructions</h3>
+                        
+                        <!-- Leather Conditioning & Cleaning -->
+                        <section class="care-subsection">
+                            <h4>Leather Conditioning & Cleaning</h4>
+                            <p>Treat your moccasins <strong>before wearing them outdoors</strong>, especially in wet or cold weather. Reapply treatment whenever they feel dry or stiff.</p>
+                            
+                            <p><strong>We Recommend:</strong></p>
+                            <ul class="product-list">
+                                <li><strong><a href="https://www.amazon.com/Bickmore-Bick-Leather-Conditioner-Finished/dp/B001CS2Q4M" target="_blank" rel="noopener noreferrer">Bick4®</a></strong> – cleans, conditions, and repels water.</li>
+                                <li><strong><a href="https://www.amazon.com/Bickmore-100-Pure-Neatsfoot-Oil/dp/B0772ZGVB6" target="_blank" rel="noopener noreferrer">Neatsfoot Oil®</a></strong> – great for deep conditioning in warm seasons.</li>
+                                <li><strong><a href="https://www.amazon.com/Bickmore-Leather-Oil-Conditioner-Waterproofs/dp/B0DPNN526Z" target="_blank" rel="noopener noreferrer">Mink Oil</a></strong> (no silicone or wax) – waterproofs and insulates for colder months.</li>
+                            </ul>
+                            
+                            <p>Apply by rubbing deeply into the leather.<br>
+                            For suede areas, use <strong><a href="https://www.amazon.com/Bickmore-Gard-More/dp/B074V9VT41" target="_blank" rel="noopener noreferrer">Gard-More® spray</a></strong> instead—this protects without darkening.</p>
+                            
+                            <div class="warning-note">
+                                Never use petroleum, wax, or silicone-based products—they clog leather pores and shorten the life of your moccasins.
+                            </div>
+                        </section>
+
+                        <!-- Washing Your Moccasins -->
+                        <section class="care-subsection">
+                            <h4>Washing Your Moccasins</h4>
+                            <p>Your moccasins are <strong>machine washable</strong> once or twice per year:</p>
+                            <ol>
+                                <li>Remove <strong>laces and wool liners</strong>.</li>
+                                <li>Wash in <strong>cold water, gentle cycle</strong>, with <strong>Woolite®</strong> or castile soap.</li>
+                                <li><strong>Air dry</strong> out of direct sunlight.</li>
+                                <li><strong>Before they're completely dry</strong>, apply Neatsfoot Oil® or Bick4®.</li>
+                            </ol>
+                            
+                            <div class="warning-note">
+                                ⚠️ <strong>DO NOT machine wash</strong> moccasins with:
+                                <ul>
+                                    <li>Light leather and dark trim</li>
+                                    <li>Beadwork</li>
+                                    <li>Gemstone buttons</li>
+                                </ul>
+                                When in doubt, call us: <strong>845-679-7302</strong>
+                            </div>
+                        </section>
+
+                        <!-- Sheepskin Liner Care -->
+                        <section class="care-subsection">
+                            <h4>Sheepskin Liner Care</h4>
+                            <p>When liners get flat or funky (usually every 20–30 wears):</p>
+                            <ol>
+                                <li>Remove them by lifting the heel and working your fingers to the front.</li>
+                                <li>Hand wash with Woolite® and lay flat to dry.</li>
+                                <li>Stretch them lengthwise before drying.</li>
+                                <li>To reinsert: roll the liner (fluffy side up) from toe to heel, place it inside, and unroll from heel to toe.</li>
+                            </ol>
+                        </section>
+
+                        <!-- Daily Care & Storage -->
+                        <section class="care-subsection">
+                            <h4>Daily Care & Storage</h4>
+                            <p>When you take them off, hang them up to dry. Never leave them in a pile—leather needs to breathe to stay healthy.</p>
+                        </section>
+
+                        <!-- Resoling Services -->
+                        <section class="care-subsection">
+                            <h4>Resoling Services</h4>
+                            <p>After years of adventures, your moccasins may need resoling.</p>
+                            
+                            <p><strong>If you have:</strong><br>
+                            <strong>Vibram® soles:</strong> Any quality shoe repair shop or send to us<br>
+                            <strong>Conveyor belt soles:</strong> Must be sent to Catskill Mountain Moccasins</p>
+                            
+                            <p><strong>Resole Details:</strong></p>
+                            <ul>
+                                <li>Turnaround: 8–12 weeks</li>
+                                <li>Cost: $149 + shipping</li>
+                                <li>Clean moccasins only</li>
+                                <li>Payment must be made in advance (no C.O.D.)</li>
+                                <li>If further repairs are needed, we'll contact you first for approval.</li>
+                                <li>Ship resoles to: Catskill Mountain Moccasins (Include your contact info!)</li>
+                            </ul>
+                        </section>
+                    </article>
+
+                    <!-- Contact Info -->
+                    <aside class="contact-info">
+                        <h3>Questions About Your Moccasins?</h3>
+                        <p>Our team is here to help you get the most out of your handcrafted footwear.</p>
+                        <p><strong>Phone:</strong> <a href="tel:845-679-7302">845-679-7302</a></p>
+                        <p><strong>Email:</strong> <a href="mailto:info@catskillmoccasins.com">info@catskillmoccasins.com</a></p>
+                    </aside>
+                </section>
+            </div>
+        </section>
+    </main>
+
+
+
+    <script src="scripts/main.js"></script>
+</body>
+</html>

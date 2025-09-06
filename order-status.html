@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check My Order Status - Catskill Mt. Leather Co.</title>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <h1><a href="index.html" style="text-decoration: none; color: inherit;">Catskill Mt. Leather Co.</a></h1>
+            <button class="menu-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Side Navigation Popout -->
+    <nav class="side-nav" id="sideNav">
+        <div class="side-nav-content">
+            <button class="close-btn" aria-label="Close navigation">&times;</button>
+            <div class="nav-logo">
+                <a href="index.html" class="nav-logo-link">
+                    <img src="images/logo.png" alt="Catskill Mt. Leather Co. Logo" class="nav-logo-img">
+                </a>
+            </div>
+            <ul class="side-nav-menu">
+                <li class="nav-dropdown">
+                    <a href="about.html" class="nav-link dropdown-toggle">About Us <span class="dropdown-arrow">▼</span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="about.html" class="dropdown-link" data-tab="history">Our History</a></li>
+                        <li><a href="about.html" class="dropdown-link" data-tab="mission">Our Mission</a></li>
+                        <li><a href="about.html" class="dropdown-link" data-tab="makers">Meet Your Makers</a></li>
+                        <li><a href="about.html" class="dropdown-link" data-tab="schedule">Show Schedule</a></li>
+                        <li><a href="about.html" class="dropdown-link" data-tab="famous">Famous Footwear</a></li>
+                    </ul>
+                </li>
+                <li class="nav-dropdown">
+                    <a href="custom-design.html" class="nav-link dropdown-toggle">Shop <span class="dropdown-arrow">▼</span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="custom-design.html" class="dropdown-link">Custom Design Options</a></li>
+                        <li><a href="price-quote.html" class="dropdown-link">Price Quote Submission Form</a></li>
+                        <li><a href="care-guide.html" class="dropdown-link">Wear & Care</a></li>
+                    </ul>
+                </li>
+                <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+                <li><a href="order-status.html" class="nav-link">Check My Order Status</a></li>
+                <li><a href="payment.html" class="nav-link">Make a Payment</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Overlay for side navigation -->
+    <div class="nav-overlay" id="navOverlay"></div>
+
+        <main>
+        <section class="page-content">
+            <h2>Check My Order Status</h2>
+            <div class="content-container">
+                <div class="order-status-intro">
+                    <p>Welcome to our Customer Order Status Page. Track your order and get updates on your custom Catskill Mountain Moccasins.</p>
+                </div>
+
+                <!-- Order Status Form -->
+                <div class="order-status-form-container">
+                    <form name="orderStatus" method="POST" action="form-orderstatus-query.php" class="order-status-form">
+                        <div class="form-header">
+                            <h3>Order Status Lookup</h3>
+                            <p class="version-info">Version 3.0</p>
+                        </div>
+
+                        <div class="search-instructions">
+                            <p>Search by entering your <strong>invoice number</strong> & your <strong>zip code</strong> (current zip code if you have moved and told us)</p>
+                            <p class="example">Example: 20100075165</p>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="invoice-number">Invoice Number *</label>
+                                <input type="text" name="invoice_number" id="invoice-number" value="" class="form-input" required placeholder="Enter your invoice number">
+                            </div>
+                            <div class="form-group">
+                                <label for="zip-code">Zip Code *</label>
+                                <input type="text" name="zip_code" id="zip-code" value="" class="form-input" required placeholder="Enter your zip code">
+                            </div>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="submit" class="search-button">Search Order Status</button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Important Information -->
+                <div class="order-status-info">
+                    <div class="info-section">
+                        <h4>Important Notes</h4>
+                        <ul>
+                            <li>Please turn off your pop-up blocker if you are having trouble accessing your invoice</li>
+                            <li>Please refer to your thank you email that you were sent for your original login ID</li>
+                            <li>Use your current zip code if you have moved and notified us of the address change</li>
+                        </ul>
+                    </div>
+
+                    <div class="info-section">
+                        <h4>What You'll See</h4>
+                        <p>Once you submit your order information, you'll be able to view:</p>
+                        <ul>
+                            <li>Current order status and progress</li>
+                            <li>Estimated completion dates</li>
+                            <li>Shipping information (when available)</li>
+                            <li>Order details and specifications</li>
+                        </ul>
+                    </div>
+
+                    <div class="info-section">
+                        <h4>Need Help Finding Your Order?</h4>
+                        <p>If you're having trouble locating your invoice number or need assistance with your order status, please contact us:</p>
+                        <div class="contact-details">
+                            <p><strong>Phone:</strong> 845.679.7302</p>
+                            <p><strong>Email:</strong> <a href="mailto:info@catskillmoccasins.com">info@catskillmoccasins.com</a></p>
+                            <p><strong>Business Hours:</strong> Monday - Friday, 9 AM - 5 PM EST</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+
+    <script src="scripts/main.js"></script>
+</body>
+</html>
